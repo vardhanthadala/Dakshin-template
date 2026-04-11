@@ -138,73 +138,38 @@
             display: inline-block;
         }
 
-        .morph-shape {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-45%, -50%);
-            width: 30px;
-            height: 30px;
-            background: #d10000;
-            border-radius: 50%;
-            z-index: 1;
-            animation: shapeToText 4s cubic-bezier(0.77, 0, 0.175, 1) infinite alternate;
+        .brands-reveal-wrap {
+            overflow: hidden;
+            vertical-align: bottom;
         }
 
-        .morph-text {
-            position: relative;
-            z-index: 2;
+        .brands-reveal-text {
+            display: inline-block;
+            animation: slideRightToLeft 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards,
+                shining 3s linear infinite;
+            background: linear-gradient(110deg, #000 45%, #888 50%, #000 55%);
+            background-size: 200% auto;
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
             opacity: 0;
-            animation: textAppear 4s cubic-bezier(0.77, 0, 0.175, 1) infinite alternate;
         }
 
-        @keyframes shapeToText {
+        @keyframes slideRightToLeft {
             0% {
-                width: 30px;
-                height: 30px;
-                border-radius: 50%;
-                opacity: 1;
-                transform: translate(-45%, -50%) rotate(0deg);
-            }
-
-            30% {
-                width: 40px;
-                height: 40px;
-                border-radius: 20%;
-                opacity: 1;
-                transform: translate(-45%, -50%) rotate(180deg);
-            }
-
-            60% {
-                width: 100%;
-                height: 100%;
-                border-radius: 8px;
-                opacity: 1;
-                transform: translate(-45%, -50%) rotate(360deg);
-            }
-
-            80%,
-            100% {
-                width: 110%;
-                height: 120%;
-                border-radius: 4px;
+                transform: translateX(100px);
                 opacity: 0;
-                transform: translate(-45%, -50%) rotate(360deg);
+            }
+
+            100% {
+                transform: translateX(0);
+                opacity: 1;
             }
         }
 
-        @keyframes textAppear {
-
-            0%,
-            65% {
-                opacity: 0;
-                transform: scale(0.9);
-            }
-
-            85%,
-            100% {
-                opacity: 1;
-                transform: scale(1);
+        @keyframes shining {
+            to {
+                background-position: 200% center;
             }
         }
 
@@ -352,12 +317,6 @@
             transition: all 0.4s ease;
         }
 
-        /* When any member is hovered, blur the others */
-        .td-team-area:hover .td-team-4-wrap:not(:hover) {
-            filter: blur(6px) grayscale(50%);
-            opacity: 0.4;
-            transform: scale(0.96);
-        }
 
         .td-team-4-wrap {
             transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1) !important;
@@ -391,6 +350,45 @@
             text-transform: uppercase;
             font-size: 14px;
         }
+
+        /* Mobile Responsiveness for Hero (320px, 375px, 425px) */
+        @media (max-width: 767px) {
+            .td-hero-area {
+                padding-top: 150px !important;
+            }
+
+            .td-hero-text-slide {
+                margin-top: -60px !important;
+            }
+
+            .td-hero-bigtext {
+                font-size: 80px !important;
+            }
+
+            .messi-hero {
+                height: 150px !important;
+                /* Reduced specifically for small mobile screens */
+                transform: scale(1.3) translateY(5px) !important;
+                /* Balanced positioning */
+            }
+        }
+
+        /* Tablet and Small Laptop Responsiveness (768px - 1024px) */
+        @media (min-width: 768px) and (max-width: 1024px) {
+            .messi-hero {
+                height: 150px !important;
+                /* Reduced height as requested */
+                transform: scale(1.8) translateY(-15px) !important;
+            }
+
+            .td-hero-bigtext {
+                font-size: 160px !important;
+            }
+
+            .td-hero-text-slide {
+                margin-top: -150px !important;
+            }
+        }
     </style>
 </head>
 
@@ -414,9 +412,8 @@
                         <div class="tdmenu__wrap d-flex justify-content-end justify-content-md-start">
                             <div
                                 class="tdmenu-offcanvas-open-btn mobile-nav-toggler d-flex align-items-center justify-content-center ms-auto ms-md-0">
-                                <span class="text mr-5 d-none d-md-block">menu</span>
+                                <span class="text mr-5 d-none d-lg-block">menu</span>
                                 <div class="tdmenu-offcanvas-open-bar">
-                                    <span></span>
                                     <span></span>
                                     <span></span>
                                 </div>
@@ -452,11 +449,11 @@
                                     style="transform: scale(2.5); transform-origin: left center;"></a>
                         </div>
                     </div>
-                    <div class="col-md-4 order-3 d-none d-md-block">
+                    <div class="col-md-4 order-3 d-none d-lg-block">
                         <div class="td-header-right text-end">
 
                             <a href="contact.html"
-                                class="td-btn td-btn-lg d-none d-md-inline-block td-btn-switch-animation ml-10">
+                                class="td-btn td-btn-lg d-none d-lg-inline-block td-btn-switch-animation ml-10">
                                 <span class="d-flex align-items-center justify-content-center">
                                     <span class="btn-text"> Contact Us </span>
                                     <span class="btn-icon"><i class="fa-sharp fa-solid fa-angle-right"></i></span>
@@ -531,8 +528,8 @@
                                                 alt="">
                                         </h2> -->
                                         <h2 class="title mb-0 d-flex align-items-center justify-content-center">
-                                            <img class="d-none d-sm-block" src="assets/img/hero/messi.png" alt="Messi"
-                                                style="height: 250px; width: auto; object-fit: contain;">
+                                            <img class="d-block messi-hero" src="assets/img/hero/messi.png" alt="Messi"
+                                                style="height: 240px; width: auto; object-fit: contain; transform: scale(2.5) translateY(35px); z-index: 2; position: relative;">
                                         </h2>
 
                                     </div>
@@ -666,12 +663,12 @@
                 <!-- td-hero-area-end -->
 
                 <!-- td-about-main-area-start -->
-                <div class="td-about-main-area td-service-2-wrap pt-0 pb-125">
+                <div class="td-about-main-area td-service-2-wrap pt-0 pb-0">
                     <div class="container">
                         <div class="row justify-content-center">
                             <div class="col-lg-9">
-                                <div class="td-service-2-title-wrap text-center mb-60 td-title-anim ">
-                                    <span class="td-section-2-subtitle mb-25 d-inline-block">// Who we
+                                <div class="td-service-2-title-wrap text-center mb-60  td-title-anim ">
+                                    <span class="td-section-2-subtitle mb-10 d-inline-block">// Who we
                                         are</span>
                                     <h2 class="td-section-2-title ml7" style="line-height: 1.2;">
                                         <span class="text-wrapper">
@@ -738,10 +735,9 @@
                             <div class="col-lg-9">
                                 <div class="td-service-2-title-wrap mb-40">
                                     <span class="td-section-2-subtitle mb-25 d-block">// Trusted By</span>
-                                    <div class="morph-container">
-                                        <div class="morph-shape"></div>
-                                        <h2 class="td-section-2-title d-inline-block morph-text">Brands that believe in
-                                            Us</h2>
+                                    <div class="brands-reveal-wrap">
+                                        <h2 class="td-section-2-title d-inline-block brands-reveal-text mb-0">Brands
+                                            that believe in Us</h2>
                                     </div>
                                 </div>
                             </div>
