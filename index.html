@@ -1,0 +1,1328 @@
+<!doctype html>
+<html lang="zxx">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>DAKSHIN STORIES</title>
+    <meta name="description" content="Dakshin stories">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="shortcut icon" type="image/x-icon" href="assets/img/logo/favicon.png">
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@700&display=swap" rel="stylesheet">
+    <!-- Place favicon.ico in the root directory -->
+
+    <!--<< Bootstrap min.css >>-->
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <!--<< magnific-popup.css >>-->
+    <link rel="stylesheet" href="assets/css/magnific-popup.css">
+    <!--<< fontawesome-all.min.css >>-->
+    <link rel="stylesheet" href="assets/css/fontawesome-all.min.css">
+    <!--<< swiper-bundle.min.css >>-->
+    <link rel="stylesheet" href="assets/css/swiper-bundle.min.css">
+    <!--<< odometer.css >>-->
+    <link rel="stylesheet" href="assets/css/odometer.css">
+    <!--<< ion.rangeSlider.min.css >>-->
+    <link rel="stylesheet" href="assets/css/ion.rangeSlider.min.css">
+    <!--<< effect-slicer.css >>-->
+    <link rel="stylesheet" href="assets/css/effect-slicer.css">
+    <!--<< animate.css >>-->
+    <link rel="stylesheet" href="assets/css/animate.css">
+    <!--<< default.css >>-->
+    <link rel="stylesheet" href="assets/css/defauls-spacing.css">
+    <!--<< main.css >>-->
+    <link rel="stylesheet" href="assets/css/main.css">
+    <style>
+        .sliding-reveal-wrapper {
+            position: relative;
+            display: inline-block;
+        }
+
+        .sliding-reveal-text {
+            color: #000;
+            /* Pure black branding text */
+            clip-path: inset(0 100% 0 0);
+            animation: clip-reveal 3.5s cubic-bezier(0.77, 0, 0.175, 1) infinite alternate;
+        }
+
+        .sliding-reveal-bar {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 100%;
+            background-color: #E3000F;
+            /* Crimson brand line */
+            animation: bar-slide 3.5s cubic-bezier(0.77, 0, 0.175, 1) infinite alternate;
+        }
+
+        @keyframes clip-reveal {
+
+            0%,
+            20% {
+                clip-path: inset(0 100% 0 0);
+            }
+
+            80%,
+            100% {
+                clip-path: inset(0 0 0 0);
+            }
+        }
+
+        @keyframes bar-slide {
+
+            0%,
+            15% {
+                left: 0%;
+                opacity: 0;
+            }
+
+            20% {
+                opacity: 1;
+                left: 0%;
+            }
+
+            80% {
+                left: 100%;
+                opacity: 1;
+            }
+
+            85%,
+            100% {
+                left: 100%;
+                opacity: 0;
+            }
+        }
+
+        @media (max-width: 767px) {
+            .tdmenu-offcanvas-open-btn {
+                padding-left: 12px !important;
+                padding-right: 12px !important;
+                min-width: unset !important;
+                width: auto !important;
+            }
+        }
+
+        .ml7 {
+            position: relative;
+            color: #000 !important;
+        }
+
+        .ml7 .text-wrapper {
+            position: relative;
+            display: inline-block;
+            padding-top: 0.2em;
+            padding-right: 0.05em;
+            padding-bottom: 0.1em;
+            overflow: hidden;
+        }
+
+        .ml7 .letter {
+            transform-origin: 0 100%;
+            display: inline-block;
+            line-height: 1em;
+            color: #000 !important;
+        }
+
+        .morph-container {
+            position: relative;
+            display: inline-block;
+        }
+
+        .morph-shape {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-45%, -50%);
+            width: 30px;
+            height: 30px;
+            background: #d10000;
+            border-radius: 50%;
+            z-index: 1;
+            animation: shapeToText 4s cubic-bezier(0.77, 0, 0.175, 1) infinite alternate;
+        }
+
+        .morph-text {
+            position: relative;
+            z-index: 2;
+            opacity: 0;
+            animation: textAppear 4s cubic-bezier(0.77, 0, 0.175, 1) infinite alternate;
+        }
+
+        @keyframes shapeToText {
+            0% {
+                width: 30px;
+                height: 30px;
+                border-radius: 50%;
+                opacity: 1;
+                transform: translate(-45%, -50%) rotate(0deg);
+            }
+
+            30% {
+                width: 40px;
+                height: 40px;
+                border-radius: 20%;
+                opacity: 1;
+                transform: translate(-45%, -50%) rotate(180deg);
+            }
+
+            60% {
+                width: 100%;
+                height: 100%;
+                border-radius: 8px;
+                opacity: 1;
+                transform: translate(-45%, -50%) rotate(360deg);
+            }
+
+            80%,
+            100% {
+                width: 110%;
+                height: 120%;
+                border-radius: 4px;
+                opacity: 0;
+                transform: translate(-45%, -50%) rotate(360deg);
+            }
+        }
+
+        @keyframes textAppear {
+
+            0%,
+            65% {
+                opacity: 0;
+                transform: scale(0.9);
+            }
+
+            85%,
+            100% {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        /* Glitch Effect for Dakshin */
+        .glitch {
+            position: relative;
+            color: #000;
+            display: inline-block;
+            font-family: "Oswald", sans-serif !important;
+            font-style: italic;
+            line-height: 1;
+        }
+
+        .glitch::before,
+        .glitch::after {
+            content: attr(data-text);
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: #f5f5f5; /* Match grey-bg-2 */
+            overflow: hidden;
+        }
+
+        .glitch::before {
+            left: 2px;
+            text-shadow: -2px 0 #E3000F;
+            animation: noise-anim-1 2s infinite linear alternate-reverse;
+        }
+
+        .glitch::after {
+            left: -2px;
+            text-shadow: 2px 0 #000;
+            animation: noise-anim-2 3s infinite linear alternate-reverse;
+        }
+
+        @keyframes noise-anim-1 {
+            0% { clip-path: inset(10% 0 80% 0); }
+            20% { clip-path: inset(40% 0 10% 0); }
+            40% { clip-path: inset(70% 0 20% 0); }
+            60% { clip-path: inset(10% 0 30% 0); }
+            80% { clip-path: inset(50% 0 40% 0); }
+            100% { clip-path: inset(20% 0 10% 0); }
+        }
+
+        @keyframes noise-anim-2 {
+            0% { clip-path: inset(20% 0 10% 0); }
+            20% { clip-path: inset(50% 0 40% 0); }
+            40% { clip-path: inset(10% 0 30% 0); }
+            60% { clip-path: inset(70% 0 20% 0); }
+            80% { clip-path: inset(40% 0 10% 0); }
+            100% { clip-path: inset(10% 0 80% 0); }
+        }
+
+        .split-journey,
+        .split-journey span {
+            overflow: hidden;
+            display: inline-block;
+            white-space: nowrap;
+            color: #000 !important;
+        }
+
+        .left-journey {
+            display: inline-block;
+            animation: slideFromLeft 1.5s cubic-bezier(0.77, 0, 0.175, 1) forwards;
+            transform: translateX(-100%);
+            opacity: 0;
+        }
+
+        .right-journey {
+            display: inline-block;
+            animation: slideFromRight 1.5s cubic-bezier(0.77, 0, 0.175, 1) forwards;
+            transform: translateX(100%);
+            opacity: 0;
+        }
+
+        @keyframes slideFromLeft {
+            0% {
+                transform: translateX(-100%);
+                opacity: 0;
+            }
+            100% {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+
+        @keyframes slideFromRight {
+            0% {
+                transform: translateX(100%);
+                opacity: 0;
+            }
+            100% {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+
+        .td-header__logo img,
+        .td-footer-logo img {
+            width: 170px !important;
+            height: auto !important;
+        }
+
+        /* Team Section - Focus Blur Effect */
+        .td-team-area {
+            transition: all 0.4s ease;
+        }
+
+        /* When any member is hovered, blur the others */
+        .td-team-area:hover .td-team-4-wrap:not(:hover) {
+            filter: blur(6px) grayscale(50%);
+            opacity: 0.4;
+            transform: scale(0.96);
+        }
+
+        .td-team-4-wrap {
+            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1) !important;
+            border-radius: 12px;
+            overflow: hidden;
+        }
+
+        .td-team-4-thumb img {
+            transition: transform 0.5s ease !important;
+        }
+
+        .td-team-4-wrap:hover {
+            transform: scale(1.05);
+            z-index: 10;
+        }
+
+        .td-team-4-title a {
+            color: #000 !important;
+            transition: color 0.3s ease;
+        }
+
+        .td-team-4-wrap:hover .td-team-4-title a {
+            color: #E3000F !important;
+        }
+
+        .td-team-4-subtitle {
+            color: #666 !important;
+            display: block;
+            margin-bottom: 5px;
+            font-weight: 600;
+            text-transform: uppercase;
+            font-size: 14px;
+        }
+    </style>
+</head>
+
+<body>
+
+
+
+    <!-- Scroll-top -->
+    <button class="scroll__top scroll-to-target" data-target="html">
+        <i class="fa-sharp fa-regular fa-arrow-up"></i>
+    </button>
+    <!-- Scroll-top-end-->
+
+
+    <!-- header-area -->
+    <header>
+        <div id="header-sticky" class="td-header__area td-header-spacing p-relative z-index-1">
+            <div class="container container-1750">
+                <div class="row align-items-center">
+                    <div class="col-6 col-md-4 order-2 order-md-1">
+                        <div class="tdmenu__wrap d-flex justify-content-end justify-content-md-start">
+                            <div
+                                class="tdmenu-offcanvas-open-btn mobile-nav-toggler d-flex align-items-center justify-content-center ms-auto ms-md-0">
+                                <span class="text mr-5 d-none d-md-block">menu</span>
+                                <div class="tdmenu-offcanvas-open-bar">
+                                    <span></span>
+                                    <span></span>
+                                    <span></span>
+                                </div>
+                            </div>
+                            <nav class="tdmenu__nav d-none">
+                                <div class="tdmenu__navbar-wrap tdmenu__main-menu">
+                                    <ul class="navigation">
+                                        <li class="active menu-item-has-children"><a href="index.html">Home</a>
+
+                                        </li>
+                                        <li class="#"><a href="#">WHAT WE DO</a>
+
+                                        </li>
+                                        <li class="#"><a href="portfolio-two-columns.html">ABOUT US</a>
+
+                                        </li>
+                                        <li class="#"><a href="blog.html">STORIES</a>
+
+                                        </li>
+                                        <li class=#><a href="blog.html">CORE TEAM</a>
+
+                                        </li>
+
+                                    </ul>
+                                </div>
+                            </nav>
+                        </div>
+                    </div>
+                    <div class="col-6 col-md-4 order-1 order-md-2">
+                        <div class="logo text-start text-md-center">
+                            <a class="logo-1" href="index.html"><img data-width="106"
+                                    src="assets/img/logo/logo-black.png" alt="Logo"
+                                    style="transform: scale(2.5); transform-origin: left center;"></a>
+                        </div>
+                    </div>
+                    <div class="col-md-4 order-3 d-none d-md-block">
+                        <div class="td-header-right text-end">
+
+                            <a href="contact.html"
+                                class="td-btn td-btn-lg d-none d-md-inline-block td-btn-switch-animation ml-10">
+                                <span class="d-flex align-items-center justify-content-center">
+                                    <span class="btn-text"> Contact Us </span>
+                                    <span class="btn-icon"><i class="fa-sharp fa-solid fa-angle-right"></i></span>
+                                    <span class="btn-icon"><i class="fa-sharp fa-solid fa-angle-right"></i></span>
+                                </span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu  -->
+        <div class="tdmobile__menu td-menu-large">
+            <nav class="tdmobile__menu-box">
+                <div class="close-btn"><i class="fa-solid fa-xmark"></i></div>
+                <div class="nav-logo">
+                    <a href="index.html"><img data-width="96" src="assets/img/logo/logo-black.png" alt="logo"
+                            style="transform: scale(2); transform-origin: left center;"></a>
+                </div>
+
+                <div class="tdmobile__menu-outer">
+                    <!--Here Menu Will Come Automatically Via Javascript / Same Menu as in Header-->
+                </div>
+                <div class="mt-30 ml-25 mr-25">
+                    <a href="contact.html"
+                        class="td-btn td-btn-menu-black w-100 d-inline-block td-btn-switch-animation ml-10">
+                        <span class="d-flex align-items-center justify-content-center">
+                            <span class="btn-text"> Contact Us </span>
+                            <span class="btn-icon"><i class="fa-sharp fa-solid fa-angle-right"></i></span>
+                            <span class="btn-icon"><i class="fa-sharp fa-solid fa-angle-right"></i></span>
+                        </span>
+                    </a>
+                </div>
+                <div class="social-links">
+                    <ul class="list-wrap">
+                        <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+                        <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                        <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+                        <li><a href="#"><i class="fab fa-linkedin-in"></i></a></li>
+                        <li><a href="#"><i class="fab fa-youtube"></i></a></li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+        <div class="tdmobile__menu-backdrop"></div>
+        <!-- End Mobile Menu -->
+
+    </header>
+
+    <!-- header-area-end -->
+    <div id="smooth-wrapper">
+        <div id="smooth-content">
+
+
+            <!-- main-area -->
+            <main>
+                <!-- td-hero-area-start -->
+                <div class="td-hero-area td-hero-spacing p-relative fix z-index-1">
+                    <img class="td-hero-shape p-absolute" src="#" alt="">
+                    <div class="container">
+                        <div class="row justify-content-center">
+                            <div class="col-lg-10">
+                                <div class="td-hero-content">
+                                    <div class="td-hero-title text-center  wow fadeInUp" data-wow-delay=".5s"
+                                        data-wow-duration="1s">
+                                        <h2 class="title">DAKSHIN </h2>
+                                        <h2 class="title mb-0 d-flex align-items-center justify-content-center">
+                                            <img class="mr-30 d-none d-sm-block" src="assets/img/hero/thumb.jpg" alt="">
+                                            STORIES
+                                            <img class="ml-35 d-none d-sm-block" src="assets/img/hero/thumb-2.jpg"
+                                                alt="">
+                                        </h2>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="td-hero-text-slide  wow fadeInUp" data-wow-delay=".7s" data-wow-duration="1s">
+                        <div class="container-fluid">
+                            <div class="row">
+                                <div class="swiper-container td-hero-text-slide-active">
+                                    <div class="swiper-wrapper slide-transtion">
+                                        <div class="swiper-slide">
+                                            <div>
+                                                <h2 class="td-hero-bigtext" style="color: red;">DAKSHIN </h2>
+                                            </div>
+                                        </div>
+                                        <div class="swiper-slide">
+                                            <div>
+                                                <h2 class="td-hero-bigtext " style="color: red;">STORIES </h2>
+                                            </div>
+                                        </div>
+                                        <div class="swiper-slide">
+                                            <div>
+                                                <h2 class="td-hero-bigtext" style="color: red;">DAKSHIN </h2>
+                                            </div>
+                                        </div>
+                                        <div class="swiper-slide">
+                                            <div>
+                                                <h2 class="td-hero-bigtext " style="color: red;">STORIES </h2>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="td-feature-slide-wrap td-feature-2-spacing">
+                        <div class="swiper-container td-feature-2-slider">
+                            <div class="swiper-wrapper slide-transtion">
+                                <div class="swiper-slide">
+                                    <div class="td-feature-2-item">
+
+                                        <span> DAKSHIN STORIES</span>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="td-feature-2-item">
+
+                                        <span> DAKSHIN STORIES</span>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="td-feature-2-item">
+
+                                        <span> DAKSHIN STORIES</span>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="td-feature-2-item">
+
+                                        <span> DAKSHIN STORIES</span>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="td-feature-2-item">
+
+                                        <span> DAKSHIN STORIES</span>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="td-feature-2-item">
+
+                                        <span> DAKSHIN STORIES</span>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="td-feature-2-item">
+
+                                        <span> DAKSHIN STORIES</span>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="td-feature-2-item">
+
+                                        <span> DAKSHIN STORIES</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <br><br>
+
+
+
+
+
+                    <!-- <div class="row justify-content-center">
+                        <div class="col-lg-9">
+                            <div class="td-service-2-title-wrap text-center mb-60 td-title-anim">
+
+                                <h2 class="td-section-2-title">"The GOAT arrived. Hyderabad roared. Dakshin Stories made
+                                    the impossible, possible."</h2>
+                            </div>
+                        </div>
+                    </div> -->
+
+
+
+
+
+                    <div class="row justify-content-center">
+                        <div class="col-lg-9">
+                            <div class="td-service-2-title-wrap text-center mb-0 td-title-anim">
+                                <div class="sliding-reveal-wrapper">
+                                    <span class="sliding-reveal-bar"></span>
+                                    <h2 class="td-section-2-title sliding-reveal-text">
+                                        "The GOAT arrived. Hyderabad roared. Dakshin Stories made the impossible,
+                                        possible."
+                                    </h2>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+
+
+                </div>
+                <!-- td-hero-area-end -->
+
+                <!-- td-about-main-area-start -->
+                <div class="td-about-main-area td-service-2-wrap pt-0 pb-125">
+                    <div class="container">
+                        <div class="row justify-content-center">
+                            <div class="col-lg-9">
+                                <div class="td-service-2-title-wrap text-center mb-60 td-title-anim ">
+                                    <span class="td-section-2-subtitle mb-25 d-inline-block">// Who we
+                                        are</span>
+                                    <h2 class="td-section-2-title ml7" style="line-height: 1.2;">
+                                        <span class="text-wrapper">
+                                            <span class="letters">We build culture-led IPs across South India where
+                                                brands integrate & global audiences engage deeply.</span>
+                                        </span>
+                                    </h2>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-4">
+                                <div class="td-service-main-expreance mb-30  wow fadeInUp" data-wow-delay=".3s"
+                                    data-wow-duration="1s">
+                                    <h2 class="expreance mb-0">11+</h2>
+                                    <span class="year">YEARS OF WORK EXPERIENCE</span>
+                                </div>
+                            </div>
+                            <div class="col-lg-8">
+                                <div class="td-service-main-strategy-wrap ml-50">
+                                    <div class="row">
+
+
+                                    </div>
+                                </div>
+
+
+                                <div class="container container-1680">
+                                    <div class="row">
+                                        <div class="col-12">
+                                            <div class="td-hero-bottom-thumb">
+                                                <img data-speed="0.6" class="w-100 round-2"
+                                                    src="assets/img/about/dakshin_ab.avif" alt="">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- td-about-main-area-end -->
+                <!-- <br><br> -->
+                <!-- td-feature-area-start -->
+                <div class="td-feature-area fix">
+                    <div class="col-lg-12">
+                        <div class="td-service-2-title-wrap text-center mb-100 td-title-anim">
+
+                            <h2 class="td-section-2-title split-journey">
+                                <span class="left-journey">OUR CONC</span><span class="right-journey">ERT JOURNEY</span>
+                            </h2>
+                        </div>
+                    </div>
+                    <div class="fix">
+                        <img data-speed=".9" class="w-100" src="assets/img/about/banner_1.png" alt="">
+                    </div>
+
+                </div>
+                <!-- td-feature-area-end -->
+                <!-- td-brands-area-start -->
+                <div class="td-brands-area pt-100 pb-400">
+                    <div class="container">
+                        <div class="row align-items-center mb-20">
+                            <div class="col-lg-9">
+                                <div class="td-service-2-title-wrap mb-40">
+                                    <span class="td-section-2-subtitle mb-25 d-block">// Trusted By</span>
+                                    <div class="morph-container">
+                                        <div class="morph-shape"></div>
+                                        <h2 class="td-section-2-title d-inline-block morph-text">Brands that believe in
+                                            Us</h2>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="row gx-0">
+                            <div class="col-lg-3 col-md-4 col-sm-6">
+                                <div class="td-brands-7-item text-center">
+                                    <a href="#"><img src="assets/img/brand/brand-7/logo-1.png" alt=""></a>
+                                </div>
+                            </div>
+                            <div class="col-lg-3 col-md-4 col-sm-6">
+                                <div class="td-brands-7-item text-center">
+                                    <a href="#"><img src="assets/img/brand/brand-7/logo-2.png" alt=""></a>
+                                </div>
+                            </div>
+                            <div class="col-lg-3 col-md-4 col-sm-6">
+                                <div class="td-brands-7-item text-center">
+                                    <a href="#"><img src="assets/img/brand/brand-7/logo-3.png" alt=""></a>
+                                </div>
+                            </div>
+                            <div class="col-lg-3 col-md-4 col-sm-6">
+                                <div class="td-brands-7-item text-center">
+                                    <a href="#"><img src="assets/img/brand/brand-7/logo-4.png" alt=""></a>
+                                </div>
+                            </div>
+                            <div class="col-lg-3 col-md-4 col-sm-6">
+                                <div class="td-brands-7-item text-center">
+                                    <a href="#"><img src="assets/img/brand/brand-7/logo-5.png" alt=""></a>
+                                </div>
+                            </div>
+                            <div class="col-lg-3 col-md-4 col-sm-6">
+                                <div class="td-brands-7-item text-center">
+                                    <a href="#"><img src="assets/img/brand/brand-7/logo-6.png" alt=""></a>
+                                </div>
+                            </div>
+                            <div class="col-lg-3 col-md-4 col-sm-6">
+                                <div class="td-brands-7-item text-center">
+                                    <a href="#"><img src="assets/img/brand/brand-7/logo-7.png" alt=""></a>
+                                </div>
+                            </div>
+                            <div class="col-lg-3 col-md-4 col-sm-6">
+                                <div class="td-brands-7-item text-center">
+                                    <a href="#"><img src="assets/img/brand/brand-7/logo-8.png" alt=""></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- td-brands-area-end -->
+
+
+                <!-- td-portfolio-area-start -->
+                <div class="td-portfolio-area pt-125">
+                    <h2 class="td-portfolio-2-bigtitle td-split-text td-split-in-right">Work</h2>
+                    <div class="td-portfolio-2-slider-wrap mb-10">
+                        <div class="swiper-container td-portfolio-2-slider">
+                            <div class="swiper-wrapper slide-transtion">
+                                <div class="swiper-slide">
+                                    <div class="td-portfolio-2-item p-relative">
+                                        <div class="td-portfolio-2-thumb fix">
+                                            <img src="assets/img/stage_img/s1.jpg" alt="">
+                                        </div>
+                                        <div class="td-portfolio-2-content">
+                                            <div class="dates mb-10">
+                                                <span>2026</span>
+                                                <span class="dot"></span>
+                                                Daskshin
+                                            </div>
+                                            <a class="title" href="#">Daskshin</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="td-portfolio-2-item p-relative">
+                                        <div class="td-portfolio-2-thumb fix">
+                                            <img src="assets/img/stage_img/s17.jpg" alt="">
+                                        </div>
+                                        <div class="td-portfolio-2-content">
+                                            <div class="dates mb-10">
+                                                <span>2026</span>
+                                                <span class="dot"></span>
+                                                Daskshin
+                                            </div>
+                                            <a class="title" href="#">Daskshin</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="td-portfolio-2-item p-relative">
+                                        <div class="td-portfolio-2-thumb fix">
+                                            <img src="assets/img/stage_img/s3.png" alt="">
+                                        </div>
+                                        <div class="td-portfolio-2-content">
+                                            <div class="dates mb-10">
+                                                <span>2026</span>
+                                                <span class="dot"></span>
+                                                Daskshin
+                                            </div>
+                                            <a class="title" href="#">Daskshin</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="td-portfolio-2-item p-relative">
+                                        <div class="td-portfolio-2-thumb fix">
+                                            <img src="assets/img/stage_img/s4.jpg" alt="">
+                                        </div>
+                                        <div class="td-portfolio-2-content">
+                                            <div class="dates mb-10">
+                                                <span>2026</span>
+                                                <span class="dot"></span>
+                                                Daskshin
+                                            </div>
+                                            <a class="title" href="#">Daskshin</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="td-portfolio-2-item p-relative">
+                                        <div class="td-portfolio-2-thumb fix">
+                                            <img src="assets/img/stage_img/s5.jpg" alt="">
+                                        </div>
+                                        <div class="td-portfolio-2-content">
+                                            <div class="dates mb-10">
+                                                <span>2026</span>
+                                                <span class="dot"></span>
+                                                Daskshin
+                                            </div>
+                                            <a class="title" href="#">Daskshin</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="td-portfolio-2-item p-relative">
+                                        <div class="td-portfolio-2-thumb fix">
+                                            <img src="assets/img/stage_img/s6.jpg" alt="">
+                                        </div>
+                                        <div class="td-portfolio-2-content">
+                                            <div class="dates mb-10">
+                                                <span>2026</span>
+                                                <span class="dot"></span>
+                                                Daskshin
+                                            </div>
+                                            <a class="title" href="#">Daskshin</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="td-portfolio-2-item p-relative">
+                                        <div class="td-portfolio-2-thumb fix">
+                                            <img src="assets/img/stage_img/s7.jpg" alt="">
+                                        </div>
+                                        <div class="td-portfolio-2-content">
+                                            <div class="dates mb-10">
+                                                <span>2026</span>
+                                                <span class="dot"></span>
+                                                Daskshin
+                                            </div>
+                                            <a class="title" href="#">Daskshin</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="td-portfolio-2-item p-relative">
+                                        <div class="td-portfolio-2-thumb fix">
+                                            <img src="assets/img/stage_img/s8.jpg" alt="">
+                                        </div>
+                                        <div class="td-portfolio-2-content">
+                                            <div class="dates mb-10">
+                                                <span>2026</span>
+                                                <span class="dot"></span>
+                                                Daskshin
+                                            </div>
+                                            <a class="title" href="#">Daskshin</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="td-portfolio-2-slider-wrap">
+                        <div class="swiper-container td-portfolio-2-slider-2" dir="rtl">
+                            <div class="swiper-wrapper slide-transtion">
+                                <div class="swiper-slide">
+                                    <div class="td-portfolio-2-item p-relative">
+                                        <div class="td-portfolio-2-thumb fix">
+                                            <img src="assets/img/stage_img/s9.jpg" alt="">
+                                        </div>
+                                        <div class="td-portfolio-2-content">
+                                            <div class="dates mb-10">
+                                                <span>2026</span>
+                                                <span class="dot"></span>
+                                                Daskshin
+                                            </div>
+                                            <a class="title" href="#">Daskshin</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="td-portfolio-2-item p-relative">
+                                        <div class="td-portfolio-2-thumb fix">
+                                            <img src="assets/img/stage_img/s10.jpg" alt="">
+                                        </div>
+                                        <div class="td-portfolio-2-content">
+                                            <div class="dates mb-10">
+                                                <span>2026</span>
+                                                <span class="dot"></span>
+                                                Daskshin
+                                            </div>
+                                            <a class="title" href="#">Daskshin</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="td-portfolio-2-item p-relative">
+                                        <div class="td-portfolio-2-thumb fix">
+                                            <img src="assets/img/stage_img/s11.jpg" alt="">
+                                        </div>
+                                        <div class="td-portfolio-2-content">
+                                            <div class="dates mb-10">
+                                                <span>2026</span>
+                                                <span class="dot"></span>
+                                                Daskshin
+                                            </div>
+                                            <a class="title" href="#">Daskshin</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="td-portfolio-2-item p-relative">
+                                        <div class="td-portfolio-2-thumb fix">
+                                            <img src="assets/img/stage_img/s12.jpg" alt="">
+                                        </div>
+                                        <div class="td-portfolio-2-content">
+                                            <div class="dates mb-10">
+                                                <span>2026</span>
+                                                <span class="dot"></span>
+                                                Daskshin
+                                            </div>
+                                            <a class="title" href="#">Daskshin</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="td-portfolio-2-item p-relative">
+                                        <div class="td-portfolio-2-thumb fix">
+                                            <img src="assets/img/stage_img/s13.jpg" alt="">
+                                        </div>
+                                        <div class="td-portfolio-2-content">
+                                            <div class="dates mb-10">
+                                                <span>2026</span>
+                                                <span class="dot"></span>
+                                                Daskshin
+                                            </div>
+                                            <a class="title" href="#">Daskshin</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="td-portfolio-2-item p-relative">
+                                        <div class="td-portfolio-2-thumb fix">
+                                            <img src="assets/img/stage_img/s14.jpg" alt="">
+                                        </div>
+                                        <div class="td-portfolio-2-content">
+                                            <div class="dates mb-10">
+                                                <span>2026</span>
+                                                <span class="dot"></span>
+                                                Daskshin
+                                            </div>
+                                            <a class="title" href="#">Daskshin</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="td-portfolio-2-item p-relative">
+                                        <div class="td-portfolio-2-thumb fix">
+                                            <img src="assets/img/stage_img/s15.jpg" alt="">
+                                        </div>
+                                        <div class="td-portfolio-2-content">
+                                            <div class="dates mb-10">
+                                                <span>2026</span>
+                                                <span class="dot"></span>
+                                                Daskshin
+                                            </div>
+                                            <a class="title" href="#">Daskshin</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="td-portfolio-2-item p-relative">
+                                        <div class="td-portfolio-2-thumb fix">
+                                            <img src="assets/img/stage_img/s16.jpg" alt="">
+                                        </div>
+                                        <div class="td-portfolio-2-content">
+                                            <div class="dates mb-10">
+                                                <span>2026</span>
+                                                <span class="dot"></span>
+                                                Daskshin
+                                            </div>
+                                            <a class="title" href="#">Daskshin</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- td-portfolio-area-end -->
+
+
+
+                <!-- td-testimonial-area-start -->
+                <div class="td-testimonial-area grey-bg-2 pt-100 pb-20">
+                    <div class="container">
+                        <div class="row">
+
+                            <div class="col-lg-9 col-md-8">
+                                <div class="td-testimonial-content ml-80 mb-50 wow fadeInRight" data-wow-delay=".3s"
+                                    data-wow-duration="1s">
+                                    <h2 class="td-testimonial-title mb-20 td-text-invert">The Pulse of <br>
+                                        <span class="glitch" data-text="Dakshin">Dakshin</span>
+                                    </h2>
+
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                <!-- td-testimonial-area-end -->
+
+                <div class="td-team-area td-team-about-wrap">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-lg-3 col-md-6 col-sm-6">
+                                <div class="td-team-4-wrap text-center mb-40">
+                                    <div class="td-team-4-thumb mb-25">
+                                        <img class="w-100" src="assets/img/team/1_sainathgoud.webp" alt="">
+                                    </div>
+                                    <div class="td-team-4-content">
+                                        <span class="td-team-4-subtitle">Founder</span>
+                                        <h3 class="td-team-4-title"><a href="team-details.html">Sainath Goud</a></h3>
+                                        <div class="td-team-4-social mt-10">
+                                            <a href="#">
+                                                <svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <path d="M10.2579 4.7373C11.5141 4.7373 12.7188 5.23632 13.6071 6.12458C14.4954 7.01283 14.9944 8.21757 14.9944 9.47375V14.9996H11.8367V9.47375C11.8367 9.05502 11.6704 8.65344 11.3743 8.35736C11.0782 8.06127 10.6767 7.89493 10.2579 7.89493C9.8392 7.89493 9.43762 8.06127 9.14154 8.35736C8.84545 8.65344 8.67911 9.05502 8.67911 9.47375V14.9996H5.52148V9.47375C5.52148 8.21757 6.0205 7.01283 6.90876 6.12458C7.79701 5.23632 9.00174 4.7373 10.2579 4.7373Z" fill="currentColor" />
+                                                    <path d="M3.15763 5.52734H0V15.0002H3.15763V5.52734Z" fill="currentColor" />
+                                                    <path d="M1.57881 3.15763C2.45077 3.15763 3.15763 2.45077 3.15763 1.57881C3.15763 0.706859 2.45077 0 1.57881 0C0.706859 0 0 0.706859 0 1.57881C0 2.45077 0.706859 3.15763 1.57881 3.15763Z" fill="currentColor" />
+                                                </svg>
+                                            </a>
+                                            <a href="#">
+                                                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <path d="M11.5 1H4.5C2.567 1 1 2.567 1 4.5V11.5C1 13.433 2.567 15 4.5 15H11.5C13.433 15 15 13.433 15 11.5V4.5C15 2.567 13.433 1 11.5 1Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                                                    <path d="M10.7963 7.55921C10.8827 8.14178 10.7832 8.73676 10.5119 9.25952C10.2407 9.78228 9.81148 10.2062 9.28542 10.471C8.75935 10.7358 8.16319 10.8279 7.58173 10.7344C7.00027 10.6408 6.46311 10.3663 6.04667 9.94982C5.63022 9.53338 5.35569 8.99622 5.26213 8.41476C5.16856 7.8333 5.26073 7.23714 5.52551 6.71107C5.79029 6.18501 6.21421 5.75583 6.73697 5.48458C7.25973 5.21333 7.85471 5.11382 8.43728 5.20021C9.03152 5.28833 9.58167 5.56524 10.0065 5.99003C10.4313 6.41482 10.7082 6.96496 10.7963 7.55921Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                                                    <path d="M11.8477 4.15039H11.8577" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                                                </svg>
+                                            </a>
+                                            <a href="#">
+                                                <svg width="13" height="13" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <path d="M9.33161 6.77486L15.1688 0H13.7856L8.71722 5.8826L4.66907 0H0L6.12155 8.89546L0 16H1.38336L6.73581 9.78785L11.0109 16H15.68L9.33148 6.77486H9.33187H9.33161ZM7.43696 8.97374L6.81669 8.088L1.88171 1.03969H4.00634L7.98902 6.72789L8.60929 7.61362L13.7863 15.0074H11.6616L7.43709 8.974V8.97361L7.43696 8.97374Z" fill="currentColor" />
+                                                </svg>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-3 col-md-6 col-sm-6">
+                                <div class="td-team-4-wrap text-center mb-40">
+                                    <div class="td-team-4-thumb mb-25">
+                                        <img class="w-100" src="assets/img/team/thumb-2.jpg" alt="">
+                                    </div>
+                                    <div class="td-team-4-content">
+                                        <span class="td-team-4-subtitle">Operations</span>
+                                        <h3 class="td-team-4-title"><a href="team-details.html">JOTIN</a></h3>
+                                        <div class="td-team-4-social mt-10">
+                                            <a href="#">
+                                                <svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <path d="M10.2579 4.7373C11.5141 4.7373 12.7188 5.23632 13.6071 6.12458C14.4954 7.01283 14.9944 8.21757 14.9944 9.47375V14.9996H11.8367V9.47375C11.8367 9.05502 11.6704 8.65344 11.3743 8.35736C11.0782 8.06127 10.6767 7.89493 10.2579 7.89493C9.8392 7.89493 9.43762 8.06127 9.14154 8.35736C8.84545 8.65344 8.67911 9.05502 8.67911 9.47375V14.9996H5.52148V9.47375C5.52148 8.21757 6.0205 7.01283 6.90876 6.12458C7.79701 5.23632 9.00174 4.7373 10.2579 4.7373Z" fill="currentColor" />
+                                                    <path d="M3.15763 5.52734H0V15.0002H3.15763V5.52734Z" fill="currentColor" />
+                                                    <path d="M1.57881 3.15763C2.45077 3.15763 3.15763 2.45077 3.15763 1.57881C3.15763 0.706859 2.45077 0 1.57881 0C0.706859 0 0 0.706859 0 1.57881C0 2.45077 0.706859 3.15763 1.57881 3.15763Z" fill="currentColor" />
+                                                </svg>
+                                            </a>
+                                            <a href="#">
+                                                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <path d="M11.5 1H4.5C2.567 1 1 2.567 1 4.5V11.5C1 13.433 2.567 15 4.5 15H11.5C13.433 15 15 13.433 15 11.5V4.5C15 2.567 13.433 1 11.5 1Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                                                    <path d="M10.7963 7.55921C10.8827 8.14178 10.7832 8.73676 10.5119 9.25952C10.2407 9.78228 9.81148 10.2062 9.28542 10.471C8.75935 10.7358 8.16319 10.8279 7.58173 10.7344C7.00027 10.6408 6.46311 10.3663 6.04667 9.94982C5.63022 9.53338 5.35569 8.99622 5.26213 8.41476C5.16856 7.8333 5.26073 7.23714 5.52551 6.71107C5.79029 6.18501 6.21421 5.75583 6.73697 5.48458C7.25973 5.21333 7.85471 5.11382 8.43728 5.20021C9.03152 5.28833 9.58167 5.56524 10.0065 5.99003C10.4313 6.41482 10.7082 6.96496 10.7963 7.55921Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                                                    <path d="M11.8477 4.15039H11.8577" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                                                </svg>
+                                            </a>
+                                            <a href="#">
+                                                <svg width="13" height="13" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <path d="M9.33161 6.77486L15.1688 0H13.7856L8.71722 5.8826L4.66907 0H0L6.12155 8.89546L0 16H1.38336L6.73581 9.78785L11.0109 16H15.68L9.33148 6.77486H9.33187H9.33161ZM7.43696 8.97374L6.81669 8.088L1.88171 1.03969H4.00634L7.98902 6.72789L8.60929 7.61362L13.7863 15.0074H11.6616L7.43709 8.974V8.97361L7.43696 8.97374Z" fill="currentColor" />
+                                                </svg>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-3 col-md-6 col-sm-6">
+                                <div class="td-team-4-wrap text-center mb-40">
+                                    <div class="td-team-4-thumb mb-25">
+                                        <img class="w-100" src="assets/img/team/thumb-3.jpg" alt="">
+                                    </div>
+                                    <div class="td-team-4-content">
+                                        <span class="td-team-4-subtitle">Creative</span>
+                                        <h3 class="td-team-4-title"><a href="team-details.html">DANDU</a></h3>
+                                        <div class="td-team-4-social mt-10">
+                                            <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+                                            <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                                            <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-3 col-md-6 col-sm-6">
+                                <div class="td-team-4-wrap text-center mb-40">
+                                    <div class="td-team-4-thumb mb-25">
+                                        <img class="w-100" src="assets/img/team/thumb-4.jpg" alt="">
+                                    </div>
+                                    <div class="td-team-4-content">
+                                        <span class="td-team-4-subtitle">Logistics</span>
+                                        <h3 class="td-team-4-title"><a href="team-details.html">SAMIR</a></h3>
+                                        <div class="td-team-4-social mt-10">
+                                            <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+                                            <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                                            <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+            </main>
+            <!-- main-area-end -->
+
+            <!-- footer-area-start -->
+            <footer>
+                <div class="td-footer-area td-footer-spacing black-bg">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-3 col-md-6 col-sm-6">
+                                <div class="td-footer-logo mb-30">
+                                    <a href="index.html">
+                                        <img src="assets/img/logo/logo-white.png" alt="">
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="col-lg-2 col-md-6 col-sm-6">
+                                <div class="td-footer-widget mb-30">
+                                    <h3 class="td-footer-title mb-30">Quick Link</h3>
+                                    <ul class="td-footer-widget-list">
+                                        <li><a href="#">About US</a></li>
+                                        <li><a href="#">What WE DO</a></li>
+                                        <li><a href="#">Stories</a></li>
+                                        <li><a href="#">Core Team</a></li>
+                                        <li><a href="#">Contact</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="col-lg-3 col-md-6">
+                                <div class="td-footer-widget ml-80 mb-30">
+                                    <h3 class="td-footer-title mb-30">Others</h3>
+                                    <ul class="td-footer-widget-list">
+                                        <li><a href="#">Privacy Policy</a></li>
+                                        <li><a href="#">Terms of Use</a></li>
+                                        <li><a href="#">Disclaimer</a></li>
+
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="col-lg-4 col-md-6">
+                                <div class="td-footer-widget mr-30 mb-30">
+                                    <h3 class="td-footer-title mb-30">Address</h3>
+                                    <a class="td-footer-location mb-45 d-inline-block" href="#">Dakshin Stories<br>
+                                        Hyderabad</a>
+                                    <div class="td-footer-form p-relative">
+                                        <form action="#">
+                                            <input type="text" placeholder="example@gmail.com">
+                                            <button type="submit">
+                                                <svg width="12" height="12" viewBox="0 0 12 12" fill="none"
+                                                    xmlns="http://www.w3.org/2000/svg">
+                                                    <path d="M1 11L11 1" stroke="#1C1D1F" stroke-width="1.5"
+                                                        stroke-linecap="round" stroke-linejoin="round" />
+                                                    <path d="M1 1H11V11" stroke="#1C1D1F" stroke-width="1.5"
+                                                        stroke-linecap="round" stroke-linejoin="round" />
+                                                </svg>
+                                            </button>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="td-footer-bottom mt-45">
+                                    <div class="row align-items-center">
+                                        <div class="col-lg-6 col-md-8">
+                                            <div class="td-footer-copyright mb-20">
+                                                <p>© 2026 <a href="#">Daskshin.</a> All Rights Reserved.</p>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-6 col-md-4">
+                                            <div class="td-footer-social text-md-end mb-20">
+                                                <a href="#">
+                                                    <svg width="13" height="13" viewBox="0 0 16 16" fill="none"
+                                                        xmlns="http://www.w3.org/2000/svg">
+                                                        <path
+                                                            d="M9.33161 6.77486L15.1688 0H13.7856L8.71722 5.8826L4.66907 0H0L6.12155 8.89546L0 16H1.38336L6.73581 9.78785L11.0109 16H15.68L9.33148 6.77486H9.33187H9.33161ZM7.43696 8.97374L6.81669 8.088L1.88171 1.03969H4.00634L7.98902 6.72789L8.60929 7.61362L13.7863 15.0074H11.6616L7.43709 8.974V8.97361L7.43696 8.97374Z"
+                                                            fill="currentColor" />
+                                                    </svg>
+                                                </a>
+                                                <a href="#">
+                                                    <svg width="17" height="17" viewBox="0 0 17 17" fill="none"
+                                                        xmlns="http://www.w3.org/2000/svg">
+                                                        <path
+                                                            d="M17 8.5C17 3.80558 13.1944 0 8.5 0C3.80558 0 0 3.80558 0 8.5C0 12.7426 3.10833 16.2591 7.17188 16.8967V10.957H5.01367V8.5H7.17188V6.62734C7.17188 4.49703 8.44087 3.32031 10.3825 3.32031C11.3124 3.32031 12.2852 3.48633 12.2852 3.48633V5.57813H11.2133C10.1574 5.57813 9.82812 6.23334 9.82812 6.90554V8.5H12.1855L11.8087 10.957H9.82812V16.8967C13.8917 16.2591 17 12.7426 17 8.5Z"
+                                                            fill="currentColor" />
+                                                    </svg>
+                                                </a>
+                                                <a href="#">
+                                                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none"
+                                                        xmlns="http://www.w3.org/2000/svg">
+                                                        <path
+                                                            d="M11.5 1H4.5C2.567 1 1 2.567 1 4.5V11.5C1 13.433 2.567 15 4.5 15H11.5C13.433 15 15 13.433 15 11.5V4.5C15 2.567 13.433 1 11.5 1Z"
+                                                            stroke="currentColor" stroke-width="1.5"
+                                                            stroke-linecap="round" stroke-linejoin="round" />
+                                                        <path
+                                                            d="M10.7963 7.55921C10.8827 8.14178 10.7832 8.73676 10.5119 9.25952C10.2407 9.78228 9.81148 10.2062 9.28542 10.471C8.75935 10.7358 8.16319 10.8279 7.58173 10.7344C7.00027 10.6408 6.46311 10.3663 6.04667 9.94982C5.63022 9.53338 5.35569 8.99622 5.26213 8.41476C5.16856 7.8333 5.26073 7.23714 5.52551 6.71107C5.79029 6.18501 6.21421 5.75583 6.73697 5.48458C7.25973 5.21333 7.85471 5.11382 8.43728 5.20021C9.03152 5.28833 9.58167 5.56524 10.0065 5.99003C10.4313 6.41482 10.7082 6.96496 10.7963 7.55921Z"
+                                                            stroke="currentColor" stroke-width="1.5"
+                                                            stroke-linecap="round" stroke-linejoin="round" />
+                                                        <path d="M11.8477 4.15039H11.8577" stroke="currentColor"
+                                                            stroke-width="1.5" stroke-linecap="round"
+                                                            stroke-linejoin="round" />
+                                                    </svg>
+                                                </a>
+                                                <a href="#">
+                                                    <svg width="15" height="15" viewBox="0 0 15 15" fill="none"
+                                                        xmlns="http://www.w3.org/2000/svg">
+                                                        <path
+                                                            d="M10.2579 4.7373C11.5141 4.7373 12.7188 5.23632 13.6071 6.12458C14.4954 7.01283 14.9944 8.21757 14.9944 9.47375V14.9996H11.8367V9.47375C11.8367 9.05502 11.6704 8.65344 11.3743 8.35736C11.0782 8.06127 10.6767 7.89493 10.2579 7.89493C9.8392 7.89493 9.43762 8.06127 9.14154 8.35736C8.84545 8.65344 8.67911 9.05502 8.67911 9.47375V14.9996H5.52148V9.47375C5.52148 8.21757 6.0205 7.01283 6.90876 6.12458C7.79701 5.23632 9.00174 4.7373 10.2579 4.7373Z"
+                                                            fill="currentColor" />
+                                                        <path d="M3.15763 5.52734H0V15.0002H3.15763V5.52734Z"
+                                                            fill="currentColor" />
+                                                        <path
+                                                            d="M1.57881 3.15763C2.45077 3.15763 3.15763 2.45077 3.15763 1.57881C3.15763 0.706859 2.45077 0 1.57881 0C0.706859 0 0 0.706859 0 1.57881C0 2.45077 0.706859 3.15763 1.57881 3.15763Z"
+                                                            fill="currentColor" />
+                                                    </svg>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+            <!-- footer-area-end -->
+        </div>
+    </div>
+
+
+
+    <!-- JS here -->
+    <!--<< jquery.Js >>-->
+    <script src="assets/js/vendor/jquery.js"></script>
+    <!--<< bootstrap.min.Js >>-->
+    <script src="assets/js/bootstrap.min.js"></script>
+    <!--<< gsap.Js >>-->
+    <script src="assets/js/jsap/gsap.js"></script>
+    <!--<< gsap-scroll-smoother.Js >>-->
+    <script src="assets/js/jsap/gsap-scroll-smoother.js"></script>
+    <!--<< gsap-scroll-trigger.Js >>-->
+    <script src="assets/js/jsap/gsap-scroll-trigger.js"></script>
+    <!--<< gsap-scroll-to-plugin.Js >>-->
+    <script src="assets/js/jsap/gsap-scroll-to-plugin.js"></script>
+    <!--<< gsap-split-text.Js >>-->
+    <script src="assets/js/jsap/gsap-split-text.js"></script>
+    <!--<< isotope.pkgd.min.Js >>-->
+    <script src="assets/js/isotope.pkgd.min.js"></script>
+    <!--<< ion.rangeSlider.min.Js >>-->
+    <script src="assets/js/ion.rangeSlider.min.js"></script>
+    <!--<< effect-slicer.Js >>-->
+    <script src="assets/js/effect-slicer.js"></script>
+    <!--<< imagesloaded.pkgd.min.Js >>-->
+    <script src="assets/js/imagesloaded.pkgd.min.js"></script>
+    <!--<< jquery.magnific-popup.min.Js >>-->
+    <script src="assets/js/jquery.magnific-popup.min.js"></script>
+    <!--<< jquery.odometer.min.Js >>-->
+    <script src="assets/js/jquery.odometer.min.js"></script>
+    <!--<< jquery-appear.Js >>-->
+    <script src="assets/js/jquery-appear.js"></script>
+    <!--<< swiper-bundle.min.Js >>-->
+    <script src="assets/js/swiper-bundle.min.js"></script>
+    <!--<< jquery.nice-select.min.Js >>-->
+    <script src="assets/js/nice-select.js"></script>
+    <!--<< wow.Js >>-->
+    <script src="assets/js/wow.js"></script>
+    <!--<< ajax-form.Js >>-->
+    <script src="assets/js/ajax-form.js"></script>
+    <!--<< main.Js >>-->
+    <script src="assets/js/main.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            var textWrapper = document.querySelector('.ml7 .letters');
+            if (textWrapper) {
+                textWrapper.innerHTML = textWrapper.textContent.replace(/\S/g, "<span class='letter'>$&</span>");
+
+                anime.timeline({ loop: true })
+                    .add({
+                        targets: '.ml7 .letter',
+                        translateY: ["1.1em", 0],
+                        translateX: ["0.55em", 0],
+                        translateZ: 0,
+                        rotateZ: [180, 0],
+                        duration: 750,
+                        easing: "easeOutExpo",
+                        delay: (el, i) => 50 * i
+                    }).add({
+                        targets: '.ml7',
+                        opacity: 0,
+                        duration: 1000,
+                        easing: "easeOutExpo",
+                        delay: 1000
+                    });
+            }
+        });
+    </script>
+</body>
+
+</html>
