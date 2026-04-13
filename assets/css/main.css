@@ -13982,7 +13982,88 @@ only screen and (min-width: 576px) and (max-width: 767px),
   }
 }
 
-/*# sourceMappingURL=main.css.map */@ m e d i a   ( m a x - w i d t h :   9 9 1 p x )   {   . t d - h e a d e r _ _ a r e a ,   # h e a d e r - s t i c k y ,   . t d - h e a d e r - s p a c i n g   {   w i d t h :   1 0 0 %   ! i m p o r t a n t ;   b o r d e r - b o t t o m :   1 p x   s o l i d   v a r ( - - t d - b o r d e r - 1 )   ! i m p o r t a n t ;   l e f t :   0   ! i m p o r t a n t ;   r i g h t :   0   ! i m p o r t a n t ;   }   }  
+
+/*# sourceMappingURL=main.css.map */
+
+/* BRAND MARQUEE SECTION - LIME THEME */
+.brand-section {
+  padding: 40px 0;
+  overflow: hidden;
+  /* Multi-stop horizontal lime bands as seen in image */
+  background: linear-gradient(
+    to bottom,
+    #f2ffcc 0%, #f2ffcc 20%,
+    #e6ff99 20%, #e6ff99 40%,
+    #d9ff66 40%, #d9ff66 60%,
+    #ccff33 60%, #ccff33 80%,
+    #bfff00 80%, #bfff00 100%
+  );
+  position: relative;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  min-height: 140px;
+}
+
+.brand-track {
+  display: flex;
+  width: max-content;
+  align-items: center;
+}
+
+.brand-marquee {
+  display: flex;
+  flex-shrink: 0;
+  align-items: center;
+  animation: marqueeScroll 35s linear infinite;
+  will-change: transform;
+}
+
+.brand-item {
+  padding: 0 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 1; /* Logos are fully visible black in the image */
+  transition: all 0.4s ease;
+}
+
+.brand-item img {
+  height: 42px;
+  max-width: 170px;
+  object-fit: contain;
+  /* Force logos to be solid black */
+  filter: brightness(0); 
+  transition: all 0.4s ease;
+}
+
+.brand-item:hover {
+  transform: scale(1.1);
+  opacity: 0.8;
+}
+
+@keyframes marqueeScroll {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+/* Optional: pause on hover */
+.brand-section:hover .brand-marquee {
+  animation-play-state: paused;
+}
+
+@media (max-width: 991px) {
+  .brand-section { padding: 30px 0; min-height: 110px; }
+  .brand-item { padding: 0 45px; }
+  .brand-item img { height: 34px; }
+}
+
+@media (max-width: 575px) {
+  .brand-section { padding: 25px 0; min-height: 90px; }
+  .brand-item { padding: 0 35px; }
+  .brand-item img { height: 28px; }
+}
+@ m e d i a   ( m a x - w i d t h :   9 9 1 p x )   {   . t d - h e a d e r _ _ a r e a ,   # h e a d e r - s t i c k y ,   . t d - h e a d e r - s p a c i n g   {   w i d t h :   1 0 0 %   ! i m p o r t a n t ;   b o r d e r - b o t t o m :   1 p x   s o l i d   v a r ( - - t d - b o r d e r - 1 )   ! i m p o r t a n t ;   l e f t :   0   ! i m p o r t a n t ;   r i g h t :   0   ! i m p o r t a n t ;   }   }  
  h t m l ,   b o d y   {   o v e r f l o w - x :   h i d d e n ;   w i d t h :   1 0 0 % ;   p o s i t i o n :   r e l a t i v e ;   }  
  @ m e d i a   ( m a x - w i d t h :   9 9 1 p x )   {   # h e a d e r - s t i c k y   . l o g o   {   m a r g i n - l e f t :   - 1 0 p x   ! i m p o r t a n t ;   }   }  
  
