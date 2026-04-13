@@ -16,6 +16,8 @@
     <link rel="stylesheet" href="assets/css/defauls-spacing.css">
     <link rel="stylesheet" href="assets/css/main.css">
     <link href="https://fonts.googleapis.com/css2?family=Mr+Dafoe&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,700;1,700&display=swap" rel="stylesheet">
 
 
     <style>
@@ -569,6 +571,393 @@
         .speed-4 {
             animation-duration: 65s;
         }
+
+        /* ── About Section (Added) ───────────────────────── */
+        .about-section {
+            position: relative;
+            padding: 120px 24px;
+            background: #fff;
+            overflow: hidden;
+        }
+
+        .about-section .container {
+            max-width: 1140px;
+            margin: 0 auto;
+        }
+
+        .about-section .row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 72px;
+            align-items: center;
+        }
+
+        @media (max-width: 900px) {
+            .about-section .row {
+                grid-template-columns: 1fr;
+                gap: 56px;
+            }
+        }
+
+        .sec-title {
+            position: relative;
+            padding-bottom: 32px;
+            margin-bottom: 4px;
+        }
+
+        .sec-title .title {
+            position: relative;
+            color: #d62929;
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            padding-right: 50px;
+            margin-bottom: 18px;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .sec-title .title::after {
+            content: '';
+            display: inline-block;
+            width: 36px;
+            height: 1.5px;
+            background: #d62929;
+            opacity: .55;
+        }
+
+        .sec-title h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(28px, 4vw, 46px);
+            font-weight: 700;
+            line-height: 1.15;
+            color: #111;
+            letter-spacing: -0.02em;
+        }
+
+        .sec-title h2 em {
+            font-style: italic;
+            color: #d62929;
+        }
+
+        .content-column {
+            opacity: 0;
+            transform: translateX(-40px);
+            transition: opacity .85s ease, transform .85s ease;
+        }
+
+        .content-column.visible {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .content-column .inner-column {
+            padding-top: 10px;
+        }
+
+        .content-column .text {
+            font-size: 15px;
+            line-height: 1.9;
+            color: #444;
+            margin-bottom: 28px;
+        }
+
+        .content-column .email {
+            font-size: 14px;
+            color: #111;
+            font-weight: 700;
+            margin-bottom: 44px;
+        }
+
+        .content-column .email .theme-color {
+            color: #d62929;
+        }
+
+        .btn-style-three {
+            position: relative;
+            display: inline-block;
+            padding: 13px 40px;
+            background: #111;
+            color: #fff;
+            font-size: 13px;
+            font-weight: 700;
+            letter-spacing: 1px;
+            text-transform: capitalize;
+            text-decoration: none;
+            border: 2px solid #d62929;
+            font-family: 'Inter', sans-serif;
+            overflow: hidden;
+            transition: color .3s ease;
+            z-index: 1;
+        }
+
+        .btn-style-three::before {
+            content: '';
+            position: absolute;
+            left: 10px;
+            top: 10px;
+            right: -10px;
+            bottom: -10px;
+            background-image: repeating-linear-gradient(45deg,
+                    rgba(214, 41, 41, 0.1) 0px, rgba(214, 41, 41, 0.1) 1px,
+                    transparent 1px, transparent 7px);
+            z-index: -1;
+        }
+
+        .btn-style-three::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: #d62929;
+            transform: translateX(-102%);
+            transition: transform .38s cubic-bezier(.23, 1, .32, 1);
+            z-index: 0;
+        }
+
+        .btn-style-three span {
+            position: relative;
+            z-index: 1;
+        }
+
+        .btn-style-three:hover {
+            color: #fff;
+        }
+
+        .btn-style-three:hover::after {
+            transform: translateX(0);
+        }
+
+        .image-column {
+            opacity: 0;
+            transform: translateX(40px);
+            transition: opacity .85s ease .18s, transform .85s ease .18s;
+        }
+
+        .image-column.visible {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .image-column .inner-column {
+            position: relative;
+            padding: 36px 36px 0 0;
+            margin-left: 0;
+        }
+
+        @media (min-width: 901px) {
+            .image-column .inner-column {
+                margin-left: 24px;
+            }
+        }
+
+        .image-column .inner-column::after {
+            content: '';
+            position: absolute;
+            right: 0;
+            top: 0;
+            left: 36px;
+            bottom: 90px;
+            border: 2px solid #d62929;
+            background-color: #fafafa;
+            background-image:
+                linear-gradient(rgba(214, 41, 41, 0.1) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(214, 41, 41, 0.1) 1px, transparent 1px);
+            background-size: 30px 30px;
+            animation: grid-move 12s linear infinite, pulse-bg 4s ease-in-out infinite alternate;
+            z-index: 0;
+        }
+
+        @keyframes pulse-bg {
+            from {
+                background-color: #ffffff;
+            }
+
+            to {
+                background-color: rgba(214, 41, 41, 0.08);
+            }
+        }
+
+        @keyframes grid-move {
+            from {
+                background-position: 0 0;
+            }
+
+            to {
+                background-position: 60px 60px;
+            }
+        }
+
+        /* Highly visible scan line animation */
+        .frame-scanner {
+            position: absolute;
+            left: 36px;
+            right: 0;
+            top: 0;
+            height: 3px;
+            background: linear-gradient(90deg, transparent, #d62929, #fff, #d62929, transparent);
+            box-shadow: 0 0 20px rgba(214, 41, 41, 0.6);
+            opacity: 0.6;
+            z-index: 1;
+            pointer-events: none;
+            animation: scan-move 3s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+        }
+
+        @keyframes scan-move {
+            0% {
+                top: 0;
+                opacity: 1;
+            }
+
+            50% {
+                top: 350px;
+                opacity: 0.8;
+            }
+
+            100% {
+                top: 0;
+                opacity: 1;
+            }
+        }
+
+        .image-column .inner-column::before {
+            content: '';
+            position: absolute;
+            left: -36px;
+            bottom: -36px;
+            width: 120px;
+            height: 120px;
+            background-image: radial-gradient(circle, #d62929 1.2px, transparent 1.2px);
+            background-size: 12px 12px;
+            opacity: .15;
+            z-index: 0;
+        }
+
+        .image-column .image {
+            position: relative;
+            z-index: 1;
+            overflow: hidden;
+            border-radius: 4px;
+        }
+
+        .image-column .image img {
+            width: 100%;
+            height: 440px;
+            object-fit: cover;
+            display: block;
+            transition: opacity .7s ease, transform .7s ease;
+        }
+
+        @media (max-width: 580px) {
+            .image-column .image img {
+                height: 300px;
+            }
+        }
+
+        .image-column .image img.fade-out {
+            opacity: 0;
+            transform: scale(1.05);
+        }
+
+        .image-column .image img.fade-in {
+            opacity: 1;
+            transform: scale(1);
+        }
+
+        .overlay-box {
+            position: absolute;
+            left: -20px;
+            bottom: 44px;
+            z-index: 4;
+            background: #fff;
+            border: 1.5px solid #111;
+            padding: 18px 22px;
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            min-width: 210px;
+        }
+
+        @media (max-width: 580px) {
+            .overlay-box {
+                left: 0;
+                bottom: 20px;
+                min-width: 170px;
+                padding: 12px 14px;
+            }
+        }
+
+        .stat-number {
+            font-size: 52px;
+            font-weight: 900;
+            color: #d62929;
+            line-height: 1;
+            letter-spacing: -0.03em;
+            min-width: 84px;
+            transition: opacity .4s ease, transform .4s ease;
+        }
+
+        .stat-number.changing {
+            opacity: 0;
+            transform: translateY(12px);
+        }
+
+        @media (max-width: 580px) {
+            .stat-number {
+                font-size: 36px;
+                min-width: 62px;
+            }
+        }
+
+        .stat-label {
+            font-size: 13px;
+            font-weight: 700;
+            color: #111;
+            line-height: 1.45;
+            transition: opacity .4s ease .08s, transform .4s ease .08s;
+        }
+
+        .stat-label.changing {
+            opacity: 0;
+            transform: translateY(12px);
+        }
+
+        .slide-dots {
+            display: flex;
+            gap: 8px;
+            position: absolute;
+            right: 0;
+            bottom: -32px;
+            z-index: 4;
+        }
+
+        .slide-dots button {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: #ddd;
+            border: none;
+            padding: 0;
+            cursor: pointer;
+            transition: background .3s, transform .2s;
+        }
+
+        .slide-dots button.active {
+            background: #d62929;
+            transform: scale(1.4);
+        }
+
+        .slide-progress {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            height: 3px;
+            background: #d62929;
+            width: 0%;
+            z-index: 5;
+            transition: width linear;
+        }
     </style>
 
 </head>
@@ -868,6 +1257,61 @@
                     </div>
                 </section>
 
+                <!-- About Section (Added) -->
+                <section class="about-section">
+                    <div class="container">
+                        <div class="row">
+
+                            <!-- Content Column -->
+                            <div class="content-column" id="contentCol">
+                                <div class="inner-column">
+                                    <div class="sec-title">
+                                        <div class="title">About Us</div>
+                                        <h2>Proactive planning for <em>perfect</em><br>corporate occasions</h2>
+                                    </div>
+                                    <p class="text">
+                                        We believe that the foundation of any successful corporate event lies in
+                                        proactive planning and meticulous attention to detail. Our approach ensures that
+                                        every aspect of your corporate occasion is thoughtfully considered — from the
+                                        first consultation to the final applause.
+                                    </p>
+                                    <div class="email">
+                                        Request Quote: <span class="theme-color">freequote@gmail.com</span>
+                                    </div>
+                                    <a href="about.html" class="btn-style-three"><span>Read More</span></a>
+                                </div>
+                            </div>
+
+                            <!-- Image Column -->
+                            <div class="image-column" id="imageCol">
+                                <div class="inner-column">
+                                    <div class="frame-scanner"></div>
+                                    <div class="image">
+                                        <img id="slideImg"
+                                            src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?q=80&w=900&auto=format&fit=crop"
+                                            alt="Corporate event" class="fade-in">
+                                        <div class="slide-progress" id="slideProgress"></div>
+                                    </div>
+
+                                    <!-- Stat badge -->
+                                    <div class="overlay-box">
+                                        <div class="stat-number" id="statNum">97%</div>
+                                        <div class="stat-label" id="statLbl">Client retention<br>rate</div>
+                                    </div>
+
+                                    <!-- Dot nav -->
+                                    <div class="slide-dots" id="slideDots">
+                                        <button class="active" onclick="goSlide(0)" aria-label="Slide 1"></button>
+                                        <button onclick="goSlide(1)" aria-label="Slide 2"></button>
+                                        <button onclick="goSlide(2)" aria-label="Slide 3"></button>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </section>
+
                 <section class="timeline-section">
                     <div class="container">
 
@@ -1067,6 +1511,106 @@
                     ease: "power2.out"
                 });
             });
+
+            // --- About Section Slider Logic ---
+            const SLIDES = [
+                {
+                    img: 'https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?q=80&w=900&auto=format&fit=crop',
+                    num: '97%',
+                    lbl: 'Client retention<br>rate'
+                },
+                {
+                    img: 'https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=900&auto=format&fit=crop',
+                    num: '11+',
+                    lbl: 'Years of<br>experience'
+                },
+                {
+                    img: 'https://images.unsplash.com/photo-1492684223066-81342ee5ff30?q=80&w=900&auto=format&fit=crop',
+                    num: '500+',
+                    lbl: 'Events<br>planned'
+                }
+            ];
+
+            const INTERVAL = 4000;
+            let currentSlide = 0;
+            let slideTimer = null;
+            let slideProgressTimer = null;
+
+            const imgEl = document.getElementById('slideImg');
+            const numEl = document.getElementById('statNum');
+            const lblEl = document.getElementById('statLbl');
+            const dots = document.querySelectorAll('#slideDots button');
+            const progress = document.getElementById('slideProgress');
+
+            function startProgress() {
+                if (!progress) return;
+                progress.style.transition = 'none';
+                progress.style.width = '0%';
+                requestAnimationFrame(() => {
+                    requestAnimationFrame(() => {
+                        progress.style.transition = 'width ' + INTERVAL + 'ms linear';
+                        progress.style.width = '100%';
+                    });
+                });
+            }
+
+            window.goSlide = function (i) {
+                clearInterval(slideTimer);
+                clearTimeout(slideProgressTimer);
+                if (i === currentSlide) { startAuto(); return; }
+
+                imgEl.classList.remove('fade-in');
+                imgEl.classList.add('fade-out');
+                numEl.classList.add('changing');
+                lblEl.classList.add('changing');
+                dots[currentSlide].classList.remove('active');
+                currentSlide = i;
+
+                setTimeout(() => {
+                    imgEl.src = SLIDES[currentSlide].img;
+                    imgEl.onload = () => {
+                        imgEl.classList.remove('fade-out');
+                        imgEl.classList.add('fade-in');
+                    };
+                    numEl.textContent = SLIDES[currentSlide].num;
+                    lblEl.innerHTML = SLIDES[currentSlide].lbl;
+                    setTimeout(() => {
+                        numEl.classList.remove('changing');
+                        lblEl.classList.remove('changing');
+                    }, 40);
+                    dots[currentSlide].classList.add('active');
+                    startProgress();
+                }, 480);
+
+                startAuto();
+            };
+
+            function startAuto() {
+                slideTimer = setInterval(() => window.goSlide((currentSlide + 1) % SLIDES.length), INTERVAL);
+            }
+
+            if (imgEl) {
+                startProgress();
+                startAuto();
+            }
+
+            /* Scroll-in animations for About section */
+            const aboutObserver = new IntersectionObserver((entries) => {
+                entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+            }, { threshold: 0.15 });
+
+            ['contentCol', 'imageCol'].forEach(id => {
+                const el = document.getElementById(id);
+                if (el) aboutObserver.observe(el);
+            });
+
+            /* Fallback: trigger immediately if already in view */
+            setTimeout(() => {
+                const cCol = document.getElementById('contentCol');
+                const iCol = document.getElementById('imageCol');
+                if (cCol) cCol.classList.add('visible');
+                if (iCol) iCol.classList.add('visible');
+            }, 200);
         });
     </script>
 
