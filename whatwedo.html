@@ -1703,8 +1703,8 @@
             display: flex;
             align-items: center;
             gap: 8px;
-            background: #f5f0e8;
-            border: 1px solid #e8dfc8;
+            background: #f0f4ff;
+            border: 1px solid #d0daff;
             padding: 10px 18px;
             border-radius: 40px;
             opacity: 0;
@@ -1721,14 +1721,14 @@
             width: 8px;
             height: 8px;
             border-radius: 50%;
-            background: #d4a024;
+            background: #3b82f6;
             animation: pulse-dot 2s ease-in-out infinite
         }
 
         .os-badge-text {
             font-size: 12px;
             font-weight: 700;
-            color: #7a5c1a;
+            color: #3b82f6;
             letter-spacing: .5px;
             text-transform: uppercase
         }
@@ -1781,7 +1781,7 @@
             content: '';
             position: absolute;
             inset: 0;
-            background: #d4a024;
+            background: #f8fafc;
             transform: scaleY(0);
             transform-origin: bottom;
             transition: transform .35s cubic-bezier(.22, 1, .36, 1);
@@ -1792,15 +1792,37 @@
             transform: scaleY(1)
         }
 
-        .os-cell:hover .logo-inner {
-            color: #fff
+        /* Colorful Hover States */
+        .color-1:hover::before {
+            background: #e0f2fe;
         }
 
-        .os-cell:hover .logo-inner svg path,
-        .os-cell:hover .logo-inner svg rect,
-        .os-cell:hover .logo-inner svg circle {
-            fill: #fff;
-            stroke: #fff
+        .color-2:hover::before {
+            background: #f5f3ff;
+        }
+
+        .color-3:hover::before {
+            background: #ecfdf5;
+        }
+
+        .color-4:hover::before {
+            background: #fff1f2;
+        }
+
+        .color-5:hover::before {
+            background: #fefce8;
+        }
+
+        .color-6:hover::before {
+            background: #f0fdfa;
+        }
+
+        .color-7:hover::before {
+            background: #e0f2fe;
+        }
+
+        .os-cell:hover .logo-inner {
+            color: #1a1a1a
         }
 
         .logo-inner {
@@ -1822,7 +1844,8 @@
         }
 
         .os-cell.gold-cell {
-            background: #d4a024
+            background: #fdfaf0;
+            border: 1px solid #f5eddb;
         }
 
         .os-cell.gold-cell::before {
@@ -1830,7 +1853,7 @@
         }
 
         .os-cell.gold-cell .logo-inner {
-            color: #fff
+            color: #1a1a1a
         }
 
         .os-cell.label-cell {
@@ -1846,7 +1869,7 @@
             font-weight: 700;
             letter-spacing: 3px;
             text-transform: uppercase;
-            color: #d4a024;
+            color: #3b82f6;
             margin-bottom: 8px
         }
 
@@ -1906,7 +1929,7 @@
             width: 5px;
             height: 5px;
             border-radius: 50%;
-            background: #d4a024
+            background: #3b82f6
         }
 
         @keyframes ticker {
@@ -1952,32 +1975,602 @@
                 min-height: 100px
             }
         }
-        /* ── Testimonials Section ────────────────────── */
-        .t-wrap { padding: 80px 5% 100px; background: #fff; }
-        .t-header { text-align: center; margin-bottom: 70px; }
-        .t-eyebrow { font-size: 11px; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; color: #d4a024; margin-bottom: 14px; opacity: 0; transform: translateY(10px); transition: .6s; }
-        .t-title { font-size: clamp(36px, 6vw, 64px); font-weight: 900; color: #111; letter-spacing: -.03em; opacity: 0; transform: translateY(20px); transition: .7s; }
-        .t-title em { color: #d4a024; font-family: 'Playfair Display', serif; }
-        .t-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; max-width: 1200px; margin: auto; }
-        @media(max-width: 900px) { .t-grid { grid-template-columns: repeat(2, 1fr); } }
-        @media(max-width: 600px) { .t-grid { grid-template-columns: 1fr; } }
-        .t-scene { perspective: 1000px; height: 380px; opacity: 0; transform: translateY(40px); transition: .6s; }
-        .t-card { width: 100%; height: 100%; position: relative; transform-style: preserve-3d; transition: transform .6s cubic-bezier(.4, 0, .2, 1); cursor: pointer; }
-        .t-scene:hover .t-card { transform: rotateY(180deg); }
-        .t-front, .t-back { position: absolute; inset: 0; border-radius: 20px; backface-visibility: hidden; }
-        .t-front { background: #fff; border: 1px solid #f0f0f0; box-shadow: 0 10px 30px rgba(0,0,0,0.03); display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 40px; text-align: center; transition: all .3s; }
-        .t-scene:hover .t-front { box-shadow: none; }
-        .t-avatar { width: 85px; height: 85px; border-radius: 50%; background: #fdfaf0; color: #d4a024; display: flex; align-items: center; justify-content: center; font-weight: 900; font-size: 26px; margin-bottom: 20px; border: 1px solid #f5eddb; }
-        .t-name { font-weight: 800; font-size: 19px; color: #111; }
-        .t-company { font-size: 11px; color: #d4a024; margin-top: 8px; letter-spacing: 1px; text-transform: uppercase; font-weight: 700; }
-        .t-hint { margin-top: 25px; font-size: 10px; color: #ccc; text-transform: uppercase; letter-spacing: 1px; }
-        .t-back { background: #fff; border: 1px solid #f0f0f0; box-shadow: 0 20px 40px rgba(0,0,0,0.06); transform: rotateY(180deg); padding: 35px; display: flex; flex-direction: column; justify-content: space-between; }
-        .t-quote { font-size: 60px; color: #f5eddb; font-family: 'Playfair Display', serif; line-height: 1; margin-bottom: -10px; }
-        .t-text { font-size: 15px; line-height: 1.8; color: #555; font-style: italic; }
-        .t-footer { margin-top: 20px; padding-top: 20px; border-top: 1px solid #f9f9f9; }
-        .t-stars { color: #d4a024; font-size: 13px; margin-top: 4px; }
-        .t-scene.show, .t-eyebrow.vis, .t-title.vis { opacity: 1 !important; transform: translateY(0) !important; }
 
+        /* ── Testimonials Section ────────────────────── */
+        .t-wrap {
+            padding: 80px 5% 100px;
+            background: #fff;
+        }
+
+        .t-header {
+            text-align: center;
+            margin-bottom: 70px;
+        }
+
+        .t-eyebrow {
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: #d4a024;
+            margin-bottom: 14px;
+            opacity: 0;
+            transform: translateY(10px);
+            transition: .6s;
+        }
+
+        .t-title {
+            font-size: clamp(36px, 6vw, 64px);
+            font-weight: 900;
+            color: #111;
+            letter-spacing: -.03em;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: .7s;
+        }
+
+        .t-title em {
+            color: #d4a024;
+            font-family: 'Playfair Display', serif;
+        }
+
+        .t-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 28px;
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        @media(max-width: 900px) {
+            .t-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media(max-width: 600px) {
+            .t-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .t-scene {
+            perspective: 1000px;
+            height: 380px;
+            opacity: 0;
+            transform: translateY(40px);
+            transition: .6s;
+        }
+
+        .t-card {
+            width: 100%;
+            height: 100%;
+            position: relative;
+            transform-style: preserve-3d;
+            transition: transform .6s cubic-bezier(.4, 0, .2, 1);
+            cursor: pointer;
+        }
+
+        .t-scene:hover .t-card {
+            transform: rotateY(180deg);
+        }
+
+        .t-front,
+        .t-back {
+            position: absolute;
+            inset: 0;
+            border-radius: 20px;
+            backface-visibility: hidden;
+        }
+
+        .t-front {
+            background: #fff;
+            border: 1px solid #f0f0f0;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.03);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 40px;
+            text-align: center;
+            transition: all .3s;
+        }
+
+        .t-scene:hover .t-front {
+            box-shadow: none;
+        }
+
+        .t-avatar {
+            width: 85px;
+            height: 85px;
+            border-radius: 50%;
+            background: #fdfaf0;
+            color: #d4a024;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 900;
+            font-size: 26px;
+            margin-bottom: 20px;
+            border: 1px solid #f5eddb;
+        }
+
+        .t-name {
+            font-weight: 800;
+            font-size: 19px;
+            color: #111;
+        }
+
+        .t-company {
+            font-size: 11px;
+            color: #d4a024;
+            margin-top: 8px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            font-weight: 700;
+        }
+
+        .t-hint {
+            margin-top: 25px;
+            font-size: 10px;
+            color: #ccc;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .t-back {
+            background: #fff;
+            border: 1px solid #f0f0f0;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.06);
+            transform: rotateY(180deg);
+            padding: 35px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .t-quote {
+            font-size: 60px;
+            color: #f5eddb;
+            font-family: 'Playfair Display', serif;
+            line-height: 1;
+            margin-bottom: -10px;
+        }
+
+        .t-text {
+            font-size: 15px;
+            line-height: 1.8;
+            color: #555;
+            font-style: italic;
+        }
+
+        .t-footer {
+            margin-top: 20px;
+            padding-top: 20px;
+            border-top: 1px solid #f9f9f9;
+        }
+
+        .t-stars {
+            color: #d4a024;
+            font-size: 13px;
+            margin-top: 4px;
+        }
+
+        .t-scene.show,
+        .t-eyebrow.vis,
+        .t-title.vis {
+            opacity: 1 !important;
+            transform: translateY(0) !important;
+        }
+
+
+        /* ── Awards Section v4 (Sleek & Decorative) ──────────────── */
+        .awards-section {
+            background: #ffffff;
+            padding: 140px 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .awards-header-v4 {
+            text-align: center;
+            margin-bottom: 80px;
+            position: relative;
+            z-index: 5;
+        }
+
+        .awards-header-v4 .sec-name {
+            font-size: clamp(36px, 5vw, 60px);
+            font-weight: 900;
+            color: #1a1a1a;
+            letter-spacing: -0.04em;
+            line-height: 1.1;
+            cursor: default;
+            user-select: none;
+            perspective: 1000px;
+        }
+
+        .awards-header-v4 .sec-name span {
+            display: inline-block;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            transform-origin: bottom center;
+        }
+
+        .awards-header-v4 .sec-name span:hover {
+            font-family: 'Playfair Display', serif;
+            font-style: italic;
+            font-weight: 700;
+            transform: scale(1.25) translateY(-10px);
+            z-index: 2;
+            position: relative;
+        }
+
+        /* Rainbow/Gradient Letter Shifting */
+        .awards-header-v4 .sec-name span:nth-child(5n+1):hover {
+            color: #d4a024;
+        }
+
+        .awards-header-v4 .sec-name span:nth-child(5n+2):hover {
+            color: #a855f7;
+        }
+
+        .awards-header-v4 .sec-name span:nth-child(5n+3):hover {
+            color: #3b82f6;
+        }
+
+        .awards-header-v4 .sec-name span:nth-child(5n+4):hover {
+            color: #ec4899;
+        }
+
+        .awards-header-v4 .sec-name span:nth-child(5n+5):hover {
+            color: #10b981;
+        }
+
+        .awards-header-v4 .sec-name span:hover {
+            text-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        .awards-grid-v4 {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 40px;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .award-card-v3 {
+            position: relative;
+            height: 340px;
+            /* Reduced Size */
+            border-radius: 24px;
+            overflow: hidden;
+            background: #000;
+            display: flex;
+            align-items: center;
+            padding: 45px;
+            transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+            opacity: 0;
+            transform: translateY(40px);
+        }
+
+        .award-card-v3.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        @media (min-width: 992px) {
+            .award-card-v3:nth-child(even) {
+                margin-top: 60px;
+            }
+        }
+
+        .award-card-v3:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.25);
+        }
+
+        .award-card-v3 .card-bg {
+            position: absolute;
+            inset: 0;
+            z-index: 0;
+        }
+
+        .award-card-v3 .card-bg img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0.65;
+            transition: transform 1.2s ease;
+        }
+
+        .award-card-v3 .card-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(90deg, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0.3) 100%);
+            z-index: 1;
+        }
+
+        .award-card-v3 .card-content {
+            position: relative;
+            z-index: 2;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .award-card-v3 .award-text {
+            flex: 1;
+        }
+
+        .award-card-v3 .award-year {
+            font-size: 16px;
+            font-weight: 800;
+            color: #d4a024;
+            display: block;
+            margin-bottom: 12px;
+            letter-spacing: 2px;
+        }
+
+        .award-card-v3 .award-title {
+            font-size: clamp(24px, 3vw, 36px);
+            font-weight: 900;
+            color: #fff;
+            margin: 0;
+            line-height: 1.1;
+        }
+
+        .award-card-v3 .award-icon {
+            width: 80px;
+            height: 80px;
+            flex-shrink: 0;
+            margin-left: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .award-card-v3 .award-icon svg {
+            width: 100%;
+            height: 100%;
+            stroke: #fff;
+            stroke-width: 1.5;
+            fill: none;
+        }
+
+        /* Bottom Glow */
+        .award-card-v3::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, #d4a024, #fff, #d4a024);
+            z-index: 3;
+            opacity: 0.4;
+        }
+
+        /* Floating Decorative Elements */
+        .awards-deco {
+            position: absolute;
+            inset: 0;
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        .deco-star {
+            position: absolute;
+            color: rgba(212, 160, 36, 0.15);
+            filter: blur(2px);
+            animation: floatDeco 6s ease-in-out infinite alternate;
+        }
+
+        @keyframes floatDeco {
+            0% {
+                transform: translate(0, 0) rotate(0deg);
+                opacity: 0.3;
+            }
+
+            100% {
+                transform: translate(20px, -20px) rotate(10deg);
+                opacity: 0.6;
+            }
+        }
+
+        /* Connecting Path */
+        .awards-path {
+            position: absolute;
+            top: 10%;
+            left: 10%;
+            width: 80%;
+            height: 80%;
+            border: 1px dashed rgba(212, 160, 36, 0.1);
+            border-radius: 50%;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        @media (max-width: 991px) {
+            .awards-grid-v4 {
+                grid-template-columns: 1fr;
+            }
+
+            .award-card-v3 {
+                height: 280px;
+                padding: 30px;
+            }
+
+            .award-card-v3 .award-icon {
+                width: 60px;
+                height: 60px;
+            }
+        }
+
+        /* ── Behind The Scenes Section ──────────────── */
+        .bts-section {
+            background-color: #fafafa;
+            padding: 140px 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .bts-sticky-col {
+            position: sticky;
+            top: 120px;
+            height: fit-content;
+            opacity: 0;
+            transform: translateX(-50px);
+            transition: all 1s cubic-bezier(0.23, 1, 0.32, 1);
+        }
+
+        .bts-sticky-col.visible {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .bts-main-title {
+            font-size: clamp(40px, 6vw, 84px);
+            font-weight: 900;
+            line-height: 0.95;
+            color: #1a1a1a;
+            letter-spacing: -0.04em;
+            text-transform: uppercase;
+        }
+
+        .bts-list {
+            position: relative;
+        }
+
+        .bts-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 40px;
+            padding: 50px 0;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+            transition: all 0.4s ease;
+            opacity: 0;
+            transform: translateY(50px);
+            transition: opacity 0.8s ease, transform 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+        }
+
+        .bts-item.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .bts-item:last-child {
+            border-bottom: none;
+        }
+
+        .bts-item-content {
+            flex: 1;
+        }
+
+        .bts-date {
+            font-size: 14px;
+            font-weight: 600;
+            color: #888;
+            margin-bottom: 15px;
+            display: block;
+        }
+
+        .bts-item-title {
+            font-size: clamp(24px, 3vw, 36px);
+            font-weight: 800;
+            line-height: 1.1;
+            margin-bottom: 20px;
+            color: #1a1a1a;
+            transition: color 0.3s ease;
+        }
+
+        .bts-item:hover .bts-item-title {
+            color: #d4a024;
+        }
+
+        .bts-desc {
+            font-size: 16px;
+            line-height: 1.6;
+            color: #555;
+            margin-bottom: 30px;
+            max-width: 500px;
+        }
+
+        .bts-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            font-weight: 700;
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #1a1a1a;
+            padding: 12px 28px;
+            border: 1.5px solid #1a1a1a;
+            border-radius: 4px;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            text-decoration: none;
+        }
+
+        .bts-btn:hover {
+            background: #1a1a1a;
+            color: #fff;
+            transform: translateX(5px);
+        }
+
+        .bts-item-image {
+            flex: 0 0 320px;
+            aspect-ratio: 1/1;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.05);
+            transition: all 0.6s cubic-bezier(0.23, 1, 0.320, 1);
+        }
+
+        .bts-item:hover .bts-item-image {
+            transform: translateY(-10px) rotate(2deg);
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.12);
+        }
+
+        .bts-item-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 1s ease;
+        }
+
+        .bts-item:hover .bts-item-image img {
+            transform: scale(1.1);
+        }
+
+        @media (max-width: 1199px) {
+            .bts-item-image {
+                flex: 0 0 260px;
+            }
+        }
+
+        @media (max-width: 991px) {
+            .bts-sticky-col {
+                position: relative;
+                top: 0;
+                margin-bottom: 60px;
+                transform: translateY(-20px);
+            }
+
+            .bts-item {
+                flex-direction: column-reverse;
+                gap: 30px;
+            }
+
+            .bts-item-image {
+                width: 100%;
+                flex: none;
+                aspect-ratio: 16/9;
+            }
+        }
     </style>
 </head>
 
@@ -2618,24 +3211,40 @@
                     <div class="os-grid" id="osGrid">
                         <!-- Row 1 -->
                         <div class="os-cell color-1 cell-1" data-delay="0">
-                            <div class="logo-inner"><svg viewBox="0 0 24 24" fill="none"><path d="M4 5h5v5H4zM4 14h5v5H4z" fill="#1a1a1a"/><path d="M15 12l-5-5v10l5-5z" fill="#1a1a1a"/></svg>logoipsum</div>
+                            <div class="logo-inner"><svg viewBox="0 0 24 24" fill="none">
+                                    <path d="M4 5h5v5H4zM4 14h5v5H4z" fill="#1a1a1a" />
+                                    <path d="M15 12l-5-5v10l5-5z" fill="#1a1a1a" />
+                                </svg>logoipsum</div>
                         </div>
                         <div class="os-cell color-2 cell-2" data-delay="60">
-                            <div class="logo-inner"><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="8" stroke="#1a1a1a" stroke-width="1.5"/><circle cx="12" cy="12" r="3" fill="#1a1a1a"/></svg>logoipsum</div>
+                            <div class="logo-inner"><svg viewBox="0 0 24 24" fill="none">
+                                    <circle cx="12" cy="12" r="8" stroke="#1a1a1a" stroke-width="1.5" />
+                                    <circle cx="12" cy="12" r="3" fill="#1a1a1a" />
+                                </svg>logoipsum</div>
                         </div>
                         <div class="os-cell color-3 cell-3" data-delay="120">
-                            <div class="logo-inner"><svg viewBox="0 0 24 24" fill="none"><rect x="4" y="3" width="5" height="18" rx="1" fill="#1a1a1a"/><rect x="13" y="3" width="7" height="11" rx="1" fill="#1a1a1a"/></svg>logoipsum</div>
+                            <div class="logo-inner"><svg viewBox="0 0 24 24" fill="none">
+                                    <rect x="4" y="3" width="5" height="18" rx="1" fill="#1a1a1a" />
+                                    <rect x="13" y="3" width="7" height="11" rx="1" fill="#1a1a1a" />
+                                </svg>logoipsum</div>
                         </div>
                         <div class="os-cell label-cell hide-md" data-delay="180">
-                            <div class="label-cell-inner"><div class="lc-eyebrow">Presented by</div><div class="lc-title">Our Sponsors</div></div>
+                            <div class="label-cell-inner">
+                                <div class="lc-eyebrow">Presented by</div>
+                                <div class="lc-title">Our Sponsors</div>
+                            </div>
                         </div>
 
                         <!-- Row 2 -->
                         <div class="os-cell color-4 cell-4 featured-cell" data-delay="100">
-                            <div class="logo-inner"><svg viewBox="0 0 24 24" fill="none"><path d="M12 2L2 7l10 5 10-5-10-5z" stroke="#fff" stroke-width="1.5"/></svg>Logoipsum</div>
+                            <div class="logo-inner"><svg viewBox="0 0 24 24" fill="none">
+                                    <path d="M12 2L2 7l10 5 10-5-10-5z" stroke="#fff" stroke-width="1.5" />
+                                </svg>Logoipsum</div>
                         </div>
                         <div class="os-cell color-5 cell-5 gold-cell" data-delay="160">
-                            <div class="logo-inner"><svg viewBox="0 0 24 24" fill="none"><polygon points="12,2 15,9 22,9 16,14 18,21 12,17" fill="#fff"/></svg>logoipsum</div>
+                            <div class="logo-inner"><svg viewBox="0 0 24 24" fill="none">
+                                    <polygon points="12,2 15,9 22,9 16,14 18,21 12,17" fill="#fff" />
+                                </svg>logoipsum</div>
                         </div>
                         <div class="os-cell color-6 cell-6" data-delay="220">
                             <div class="logo-inner">logoipsum</div>
@@ -2680,9 +3289,12 @@
                             <div class="brand-item"><img src="assets/img/brand/logo-3.png" alt="Brand Logo"></div>
                             <div class="brand-item"><img src="assets/img/brand/logo-4.png" alt="Brand Logo"></div>
                             <div class="brand-item"><img src="assets/img/brand/logo-5.png" alt="Brand Logo"></div>
-                            <div class="brand-item"><img src="assets/img/brand/brands-6/logo-6.png" alt="Brand Logo"></div>
-                            <div class="brand-item"><img src="assets/img/brand/brands-6/logo-7.png" alt="Brand Logo"></div>
-                            <div class="brand-item"><img src="assets/img/brand/brands-6/logo-8.png" alt="Brand Logo"></div>
+                            <div class="brand-item"><img src="assets/img/brand/brands-6/logo-6.png" alt="Brand Logo">
+                            </div>
+                            <div class="brand-item"><img src="assets/img/brand/brands-6/logo-7.png" alt="Brand Logo">
+                            </div>
+                            <div class="brand-item"><img src="assets/img/brand/brands-6/logo-8.png" alt="Brand Logo">
+                            </div>
 
                             <!-- DUPLICATE SET -->
                             <div class="brand-item"><img src="assets/img/brand/logo-1.png" alt="Brand Logo"></div>
@@ -2690,12 +3302,196 @@
                             <div class="brand-item"><img src="assets/img/brand/logo-3.png" alt="Brand Logo"></div>
                             <div class="brand-item"><img src="assets/img/brand/logo-4.png" alt="Brand Logo"></div>
                             <div class="brand-item"><img src="assets/img/brand/logo-5.png" alt="Brand Logo"></div>
-                            <div class="brand-item"><img src="assets/img/brand/brands-6/logo-6.png" alt="Brand Logo"></div>
-                            <div class="brand-item"><img src="assets/img/brand/brands-6/logo-7.png" alt="Brand Logo"></div>
-                            <div class="brand-item"><img src="assets/img/brand/brands-6/logo-8.png" alt="Brand Logo"></div>
+                            <div class="brand-item"><img src="assets/img/brand/brands-6/logo-6.png" alt="Brand Logo">
+                            </div>
+                            <div class="brand-item"><img src="assets/img/brand/brands-6/logo-7.png" alt="Brand Logo">
+                            </div>
+                            <div class="brand-item"><img src="assets/img/brand/brands-6/logo-8.png" alt="Brand Logo">
+                            </div>
                         </div>
                     </div>
                 </div>
+
+                <!-- Awards Section v4 -->
+                <section class="awards-section" id="awardsSec">
+                    <div class="awards-deco">
+                        <div class="deco-star" style="top: 10%; left: 5%;"><svg width="24" height="24"
+                                viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M12 2L15 8L22 9L17 14L18 21L12 17L6 21L7 14L2 9L9 8L12 2Z" />
+                            </svg></div>
+                        <div class="deco-star" style="top: 80%; right: 5%; animation-delay: 2s;"><svg width="32"
+                                height="32" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M12 2L15 8L22 9L17 14L18 21L12 17L6 21L7 14L2 9L9 8L12 2Z" />
+                            </svg></div>
+                        <div class="deco-star" style="bottom: 10%; left: 20%; animation-delay: 4s;"><svg width="16"
+                                height="16" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M12 2L15 8L22 9L17 14L18 21L12 17L6 21L7 14L2 9L9 8L12 2Z" />
+                            </svg></div>
+                    </div>
+                    <div class="awards-path"></div>
+
+                    <div class="container">
+                        <div class="awards-header-v4">
+                            <h2 class="sec-name">Shining Stars Awards for<br>Outstanding Contributions</h2>
+                        </div>
+                        <div class="awards-grid-v4" id="awardsGrid">
+                            <!-- Award 1 -->
+                            <div class="award-card-v3">
+                                <div class="card-bg">
+                                    <img src="https://images.unsplash.com/photo-1475721027785-f74dea327912?q=80&w=1200&auto=format&fit=crop"
+                                        alt="">
+                                </div>
+                                <div class="card-overlay"></div>
+                                <div class="card-content">
+                                    <div class="award-text">
+                                        <span class="award-year">2022</span>
+                                        <h3 class="award-title">Best Corporate <br>Event Planner</h3>
+                                    </div>
+                                    <div class="award-icon">
+                                        <svg viewBox="0 0 24 24">
+                                            <path
+                                                d="M12 15L15.5 18L14.5 13.5L18 10L13.5 9.5L12 5L10.5 9.5L6 10L9.5 13.5L8.5 18L12 15Z" />
+                                            <circle cx="12" cy="11.5" r="8.5" />
+                                            <path d="M7 19.5L4 23L7 21L10 23L7 19.5Z" fill="white" />
+                                            <path d="M17 19.5L20 23L17 21L14 23L17 19.5Z" fill="white" />
+                                        </svg>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Award 2 -->
+                            <div class="award-card-v3">
+                                <div class="card-bg">
+                                    <img src="https://images.unsplash.com/photo-1511795409834-ef04bbd61622?q=80&w=1200&auto=format&fit=crop"
+                                        alt="">
+                                </div>
+                                <div class="card-overlay"></div>
+                                <div class="card-content">
+                                    <div class="award-text">
+                                        <span class="award-year">2020</span>
+                                        <h3 class="award-title">Top Event <br>Design Winner</h3>
+                                    </div>
+                                    <div class="award-icon">
+                                        <svg viewBox="0 0 24 24">
+                                            <path
+                                                d="M6 9H18M6 9V5C6 3.89543 6.89543 3 8 3H16C17.1046 3 18 3.89543 18 5V9M6 9C4.89543 9 4 9.89543 4 11V12C4 13.1046 4.89543 14 6 14H18C19.1046 14 20 13.1046 20 12V11C20 9.89543 19.1046 9 18 9M8 14V17C8 19.2091 9.79086 21 12 21M16 14V17C16 19.2091 14.2091 21 12 21M12 21V14M10 21H14" />
+                                            <path
+                                                d="M12 8L13.5 11.5L17 12L14.5 14.5L15 18L12 16L9 18L9.5 14.5L7 12L10.5 11.5L12 8Z"
+                                                stroke-width="1.5" />
+                                        </svg>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Award 3 -->
+                            <div class="award-card-v3">
+                                <div class="card-bg">
+                                    <img src="https://images.unsplash.com/photo-1505373877841-8d25f7d46678?q=80&w=1200&auto=format&fit=crop"
+                                        alt="">
+                                </div>
+                                <div class="card-overlay"></div>
+                                <div class="card-content">
+                                    <div class="award-text">
+                                        <span class="award-year">2012</span>
+                                        <h3 class="award-title">Innovative <br>Stage Design</h3>
+                                    </div>
+                                    <div class="award-icon">
+                                        <svg viewBox="0 0 24 24">
+                                            <circle cx="12" cy="8" r="5" />
+                                            <path
+                                                d="M4 14C4 12.8954 4.89543 12 6 12H18C19.1046 12 20 12.8954 20 14V16C20 19.3137 17.3137 22 14 22H10C6.68629 22 4 19.3137 4 16V14Z" />
+                                            <path d="M12 12V17M9 17L12 20L15 17" stroke-linecap="round" />
+                                        </svg>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Award 4 -->
+                            <div class="award-card-v3">
+                                <div class="card-bg">
+                                    <img src="https://images.unsplash.com/photo-1519167758481-83f550bb49b3?q=80&w=1200&auto=format&fit=crop"
+                                        alt="">
+                                </div>
+                                <div class="card-overlay"></div>
+                                <div class="card-content">
+                                    <div class="award-text">
+                                        <span class="award-year">2024</span>
+                                        <h3 class="award-title">Elite Industry <br>Excellence</h3>
+                                    </div>
+                                    <div class="award-icon">
+                                        <svg viewBox="0 0 24 24">
+                                            <path d="M12 2L15 8L22 9L17 14L18 21L12 17L6 21L7 14L2 9L9 8L12 2Z" />
+                                            <circle cx="12" cy="12" r="10" stroke-dasharray="2 4" />
+                                        </svg>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Behind The Scenes Section -->
+                <section class="bts-section" id="btsSec">
+                    <div class="container">
+                        <div class="row">
+                            <!-- Left Column: Sticky Title -->
+                            <div class="col-lg-5">
+                                <div class="bts-sticky-col" id="btsSticky">
+                                    <h2 class="bts-main-title">Behind The Scenes <br>A Look At Our <br>Event Success</h2>
+                                </div>
+                            </div>
+                            <!-- Right Column: List -->
+                            <div class="col-lg-7">
+                                <div class="bts-list" id="btsList">
+                                    <!-- Item 1 -->
+                                    <div class="bts-item">
+                                        <div class="bts-item-content">
+                                            <span class="bts-date">DEC 4, 2024</span>
+                                            <h3 class="bts-item-title">Top Tips For Getting The Most Out Of Seminars</h3>
+                                            <p class="bts-desc">Seminars offer a wealth of knowledge, opportunities to network, and a chance to learn from industry experts. To ensure you gain the most value from these sessions...</p>
+                                            <a href="#" class="bts-btn">
+                                                Read More
+                                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none"
+                                                    xmlns="http://www.w3.org/2000/svg">
+                                                    <path d="M5 12H19M19 12L13 6M19 12L13 18" stroke="currentColor"
+                                                        stroke-width="2" stroke-linecap="round"
+                                                        stroke-linejoin="round" />
+                                                </svg>
+                                            </a>
+                                        </div>
+                                        <div class="bts-item-image">
+                                            <img src="assets/img/bts_seminar.png"
+                                                alt="Seminar Hall">
+                                        </div>
+                                    </div>
+
+                                    <!-- Item 2 -->
+                                    <div class="bts-item">
+                                        <div class="bts-item-content">
+                                            <span class="bts-date">DEC 4, 2024</span>
+                                            <h3 class="bts-item-title">The Path To Success Expert Business Advice</h3>
+                                            <p class="bts-desc">Achieving success in today’s fast-paced business environment requires more than just ambition—it demands a strategic approach and expert guidance to stay ahead.</p>
+                                            <a href="#" class="bts-btn">
+                                                Read More
+                                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none"
+                                                    xmlns="http://www.w3.org/2000/svg">
+                                                    <path d="M5 12H19M19 12L13 6M19 12L13 18" stroke="currentColor"
+                                                        stroke-width="2" stroke-linecap="round"
+                                                        stroke-linejoin="round" />
+                                                </svg>
+                                            </a>
+                                        </div>
+                                        <div class="bts-item-image">
+                                            <img src="assets/img/bts_business.png"
+                                                alt="Business Success">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
 
             </main>
 
@@ -3129,6 +3925,48 @@
                 }, { threshold: 0.2 });
                 tObserver.observe(tGrid);
             }
+
+            // --- Awards Animation ---
+            const awardsIo = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const items = entry.target.querySelectorAll('.award-card-v3');
+                        items.forEach((item, i) => {
+                            setTimeout(() => {
+                                item.classList.add('visible');
+                            }, i * 200);
+                        });
+                        awardsIo.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            const awardsGrid = document.getElementById('awardsGrid');
+            if (awardsGrid) awardsIo.observe(awardsGrid);
+
+            // --- Behind The Scenes Animation ---
+            const btsIo = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        if (entry.target.id === 'btsSticky') {
+                            entry.target.classList.add('visible');
+                        } else {
+                            const items = entry.target.querySelectorAll('.bts-item');
+                            items.forEach((item, i) => {
+                                setTimeout(() => {
+                                    item.classList.add('visible');
+                                }, i * 250);
+                            });
+                        }
+                        btsIo.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.15 });
+
+            const btsSticky = document.getElementById('btsSticky');
+            const btsList = document.getElementById('btsList');
+            if (btsSticky) btsIo.observe(btsSticky);
+            if (btsList) btsIo.observe(btsList);
         });
     </script>
 
