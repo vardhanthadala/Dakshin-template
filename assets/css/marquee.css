@@ -1,0 +1,63 @@
+
+/* BRAND MARQUEE SECTION */
+.brand-section {
+  padding: 60px 0;
+  overflow: hidden;
+  background: #ffffff; /* Default background, can be changed to match theme */
+  border-top: 1px solid rgba(0,0,0,0.05);
+  border-bottom: 1px solid rgba(0,0,0,0.05);
+}
+
+.brand-track {
+  display: flex;
+  width: 200%; /* Enough space for duplication */
+}
+
+.brand-marquee {
+  display: flex;
+  flex-shrink: 0;
+  min-width: 100%;
+  align-items: center;
+  justify-content: space-around;
+  animation: scrollMarquee 30s linear infinite;
+}
+
+.brand-item {
+  padding: 0 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0.5;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  filter: grayscale(100%);
+}
+
+.brand-item img {
+  height: 45px;
+  max-width: 160px;
+  object-fit: contain;
+  transition: all 0.4s ease;
+}
+
+.brand-item:hover {
+  opacity: 1;
+  filter: grayscale(0%);
+  transform: scale(1.1);
+}
+
+@keyframes scrollMarquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+/* Pause animation on hover for better UX */
+.brand-section:hover .brand-marquee {
+  animation-play-state: paused;
+}
+
+@media (max-width: 768px) {
+  .brand-section { padding: 40px 0; }
+  .brand-item { padding: 0 30px; }
+  .brand-item img { height: 35px; }
+}
+
